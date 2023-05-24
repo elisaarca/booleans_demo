@@ -1,0 +1,74 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"tbb_install_target"
+		],
+		"files" : 
+		[
+			"arrangements/external/oneTBB/cmake/utils.cmake",
+			"arrangements/external/oneTBB/src/tbbmalloc_proxy/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 89,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 26,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 40,
+				"parent" : 1
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "runtime",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"appleclang_14.0_cxx17_64_debug/libtbbmalloc_proxy_debug.2.7.dylib",
+				"appleclang_14.0_cxx17_64_debug/libtbbmalloc_proxy_debug.2.dylib"
+			],
+			"targetId" : "tbbmalloc_proxy::@49795deaa7100a19c7a7",
+			"targetIndex" : 8,
+			"targetInstallNamelink" : "skip",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "devel",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"appleclang_14.0_cxx17_64_debug/libtbbmalloc_proxy_debug.dylib"
+			],
+			"targetId" : "tbbmalloc_proxy::@49795deaa7100a19c7a7",
+			"targetIndex" : 8,
+			"targetInstallNamelink" : "only",
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "arrangements/external/oneTBB/src/tbbmalloc_proxy",
+		"source" : "arrangements/external/oneTBB/src/tbbmalloc_proxy"
+	}
+}

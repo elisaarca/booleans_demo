@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "shewchuk_predicates",
+		"source" : "arrangements/external/Cinolib/external/shewchuk_predicates"
+	}
+}

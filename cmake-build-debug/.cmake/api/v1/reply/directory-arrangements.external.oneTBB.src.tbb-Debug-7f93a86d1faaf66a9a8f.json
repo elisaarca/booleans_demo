@@ -1,0 +1,90 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"tbb_install_target"
+		],
+		"files" : 
+		[
+			"arrangements/external/oneTBB/cmake/utils.cmake",
+			"arrangements/external/oneTBB/src/tbb/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 123,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 26,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 40,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 172,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "runtime",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"appleclang_14.0_cxx17_64_debug/libtbb_debug.12.7.dylib",
+				"appleclang_14.0_cxx17_64_debug/libtbb_debug.12.dylib"
+			],
+			"targetId" : "tbb::@4e762e095b2935139927",
+			"targetIndex" : 6,
+			"targetInstallNamelink" : "skip",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "devel",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"appleclang_14.0_cxx17_64_debug/libtbb_debug.dylib"
+			],
+			"targetId" : "tbb::@4e762e095b2935139927",
+			"targetIndex" : 6,
+			"targetInstallNamelink" : "only",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "devel",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"cmake-build-debug/arrangements/external/oneTBB/src/tbb/tbb.pc"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "arrangements/external/oneTBB/src/tbb",
+		"source" : "arrangements/external/oneTBB/src/tbb"
+	}
+}

@@ -1,0 +1,3 @@
+/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-subbuild/CMakeFiles/indirect_predicates-populate.dir
+/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-subbuild/CMakeFiles/edit_cache.dir
+/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-subbuild/CMakeFiles/rebuild_cache.dir
