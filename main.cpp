@@ -8,14 +8,20 @@
 #include "booleans.h"
 
 
+
+
 int main(int argc, char **argv)
 {
     std::vector<std::string> files;
+    std::vector<std::string> output;
     files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/bunny.obj");
     files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/cow.obj");
+
+
     using namespace cinolib;
     DrawableTrimesh<> m(files[0].c_str());
     DrawableTrimesh<> m1(files[1].c_str());
+    //DrawableTrimesh<> m2("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/cube.obj");
 
     GLcanvas gui;
     SurfaceMeshControls<DrawableTrimesh<>> mesh_controls(&m, &gui);
@@ -45,25 +51,39 @@ int main(int argc, char **argv)
             //fai l'operazione booleana tra le mesh
             //metti il risultato in m2
 
-            //mi dichiaro questi
+            //dichiaro questi
             std::vector<double> in_coords, bool_coords;
             std::vector<uint> in_tris, bool_tris;
             std::vector<uint> in_labels;
             std::vector<std::bitset<NBIT>> bool_labels;
 
-            //poi faccio partire questa che "riempie i vettori" mette tutto in un file. Io lo dovrò caricare su una mesh
+            //"riempie i vettori" usando le mesh presenti in files. Dovrà essere caricato su una mesh
             loadMultipleFiles(files, in_coords, in_tris, in_labels);
             booleanPipeline(in_coords, in_tris, in_labels, op, bool_coords, bool_tris, bool_labels);
 
+            file_out = "/Users/elisa/Desktop/Tirocinio/booleans_demo/data/result.obj";
+
+            //scrive il risultato in un file
             cinolib::write_OBJ(file_out.c_str(), bool_coords, bool_tris, {});
 
+            DrawableTrimesh<> m2(file_out.c_str());
+
+            //devo mettere file_out su una mesh
+            //string -> obj
+
+            //DrawableTrimesh<> m2("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/cube.obj");
+            m2.poly_set_color(cinolib::Color::PASTEL_PINK());
 
             //togli m e m1 dalla gui e inserisci m2
             gui.pop(&m);
             gui.pop(&m1);
-            //gui.push(&m2);
+
+            std::cerr << file_out.c_str() << std::endl;
+
+            gui.push(&m2);
         }
     };
+
     return gui.launch();
 }
     /*
