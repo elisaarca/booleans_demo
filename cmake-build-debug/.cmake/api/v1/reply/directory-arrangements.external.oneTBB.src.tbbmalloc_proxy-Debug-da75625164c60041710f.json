@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "arrangements/external/oneTBB/src/tbbmalloc_proxy",
+		"source" : "arrangements/external/oneTBB/src/tbbmalloc_proxy"
+	}
+}

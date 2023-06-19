@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ca91bdca-1361-4274-98db-48f764594bd6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-fa27d2bb0d2d9b711e8b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/directory-arrangements.external.oneTBB.src.tbbmalloc_proxy-Debug-da75625164c60041710f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/CMakeFiles/booleans_demo.dir/main.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/appleclang_14.0_cxx17_64_debug/libtbb_debug.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/booleans_demo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/cache-v2-3f10bf694ec7638b1ebc.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/cache-v2-c687430115263485af95.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-fd9bc1c63f58175a9a34.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-35d16785db5232e10639.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-4dc282bd1aacf3f129bf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/directory-arrangements.external.oneTBB-Debug-9d62ab1de40eb7498e37.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/directory-arrangements.external.oneTBB-Debug-1d42ecf17e0ea27fcd77.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/directory-arrangements.external.oneTBB.src.tbb-Debug-7f93a86d1faaf66a9a8f.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/directory-arrangements.external.oneTBB.src.tbb-Debug-481b171707106fd19a8a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/directory-arrangements.external.oneTBB.src.tbbmalloc-Debug-54617c3e927171eca65a.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/directory-arrangements.external.oneTBB.src.tbbmalloc-Debug-d8e80a49b240931d40fd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/directory-arrangements.external.oneTBB.src.tbbmalloc_proxy-Debug-7bcabe2d865e8e33e99b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/index-2023-05-24T08-24-39-0973.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/index-2023-05-26T08-21-20-0492.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/target-mesh_booleans-Debug-441f6dd71a9089dfa52f.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/target-booleans_demo-Debug-2a5f0027329a5dbd7057.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/target-tbb-Debug-5feb81dc76b614e4fd15.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/target-tbb-Debug-e0e786b4a95aecaea7b4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/target-tbbmalloc-Debug-7b464e2a7958d0630626.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/target-tbbmalloc-Debug-1f9671e40d28581895d4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.cmake/api/v1/reply/target-tbbmalloc_proxy-Debug-73f7aae3bbbaff3c00b5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/CPackConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/CPackConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/CPackSourceConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/CPackSourceConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/_deps/indirect_predicates-subbuild/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/_deps/indirect_predicates-subbuild/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/_deps/indirect_predicates-subbuild/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/_deps/indirect_predicates-subbuild/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/CMakeFiles/Export/50bf70e196cec95d4d513cf01ed33e20/TBBTargets-debug.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/CMakeFiles/Export/50bf70e196cec95d4d513cf01ed33e20/TBBTargets-debug.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/CMakeFiles/Export/50bf70e196cec95d4d513cf01ed33e20/TBBTargets.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/CMakeFiles/Export/50bf70e196cec95d4d513cf01ed33e20/TBBTargets.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/address_waiter.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/address_waiter.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/allocator.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/allocator.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/arena.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/arena.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/arena_slot.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/arena_slot.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/concurrent_bounded_queue.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/concurrent_bounded_queue.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/dynamic_link.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/dynamic_link.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/exception.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/exception.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/global_control.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/global_control.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/governor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/governor.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/itt_notify.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/itt_notify.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/market.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/market.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/misc.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/misc.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/misc_ex.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/misc_ex.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/observer_proxy.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/observer_proxy.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/parallel_pipeline.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/parallel_pipeline.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/private_server.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/private_server.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/profiling.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/profiling.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/queuing_rw_mutex.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/queuing_rw_mutex.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rml_tbb.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rml_tbb.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rtm_mutex.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rtm_mutex.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rtm_rw_mutex.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rtm_rw_mutex.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/semaphore.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/semaphore.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/small_object_pool.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/small_object_pool.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task_dispatcher.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task_dispatcher.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task_group_context.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task_group_context.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/version.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/version.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbb/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbbmalloc/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbbmalloc/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbbmalloc_proxy/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/arrangements/external/oneTBB/src/tbbmalloc_proxy/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../main.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="1.1" />
+  </component>
+  <component name="ProjectId" id="2QKmag53DBkfU4sVNznGZoO9rh2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ca91bdca-1361-4274-98db-48f764594bd6" name="Changes" comment="" />
+      <created>1685110711636</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685110711636</updated>
+      <workItem from="1685110712683" duration="6000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

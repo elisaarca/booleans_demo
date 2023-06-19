@@ -212,7 +212,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=mesh_booleans
+CMAKE_PROJECT_NAME:STATIC=booleans_demo
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=2021.7.0
@@ -434,6 +434,15 @@ TBB_VALGRIND_MEMCHECK:BOOL=OFF
 
 //Build as Universal Windows Driver (UWD)
 TBB_WINDOWS_DRIVER:BOOL=OFF
+
+//Value Computed by CMake
+booleans_demo_BINARY_DIR:STATIC=/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug
+
+//Value Computed by CMake
+booleans_demo_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+booleans_demo_SOURCE_DIR:STATIC=/Users/elisa/Desktop/Tirocinio/booleans_demo
 
 //Dependencies for the target
 glfw_LIB_DEPENDS:STATIC=general;-framework Cocoa;general;-framework IOKit;general;-framework CoreFoundation;

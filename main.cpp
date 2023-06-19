@@ -5,6 +5,7 @@
 #endif
 #include <cinolib/gl/glcanvas.h>
 #include <cinolib/gl/surface_mesh_controls.h>
+#include <cinolib/extrude_mesh.h>
 #include "booleans.h"
 
 
@@ -69,6 +70,11 @@ int main(int argc, char **argv)
 
     uint num_tris_in_final_solution;
 
+
+    DrawableTrimesh<> m4 ("/Users/elisa/Desktop/I.obj");
+    extrude_mesh(m4, vec3d(0,0,1));
+
+
     gui.callback_app_controls = [&]()
     {
 
@@ -88,6 +94,9 @@ int main(int argc, char **argv)
             computeFinalExplicitResult(tm, labels, num_tris_in_final_solution, bool_coords, bool_tris, bool_labels, true);
             m2 = DrawableTrimesh(bool_coords, bool_tris);
             m2.poly_set_color(cinolib::Color::PASTEL_GREEN());
+            m2.bbox().diag();
+            //m2.scale();
+            //m2.translate();
 
             gui.pop(&m);
             gui.pop(&m1);
