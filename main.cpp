@@ -3,11 +3,13 @@
 #define _HAS_STD_BYTE 0  // https://developercommunity.visualstudio.com/t/error-c2872-byte-ambiguous-symbol/93889
 #define NOMINMAX // https://stackoverflow.com/questions/1825904/error-c2589-on-stdnumeric-limitsdoublemin
 #endif
+
 #include <cinolib/gl/glcanvas.h>
 #include <cinolib/gl/surface_mesh_controls.h>
 #include <cinolib/extrude_mesh.h>
 #include "booleans.h"
-
+#include <cinolib/profiler.h>
+#include <cinolib/meshes/meshes.h>
 
 
 
@@ -30,6 +32,9 @@ int main(int argc, char **argv)
     //le due mesh vengono pushate nella gui
     gui.push(&m);
     gui.push(&m1);
+
+    m.show_vert_color();
+    m1.show_vert_color();
 
     //le mesh vengono colorate
     m.poly_set_color(cinolib::Color::PASTEL_PINK());
@@ -113,6 +118,26 @@ int main(int argc, char **argv)
             gui.pop(&m1);
             gui.push(&m2);
         }
+    };
+
+    Profiler profiler;
+    gui.callback_mouse_left_click = [&](int modifiers) -> bool
+    {
+        if(modifiers & GLFW_MOD_SHIFT)
+        {
+            vec3d p;
+            vec2d click = gui.cursor_pos();
+            if(gui.unproject(click, p)) // transform click in a 3d point
+            {
+                profiler.push("Vertex pick");
+                uint vid = m.pick_vert(p);
+                profiler.pop();
+                std::cout << "ID " << vid << std::endl;
+                m.vert_data(vid).color = Color::RED();
+                m.updateGL();
+            }
+        }
+        return false;
     };
 
     return gui.launch();
