@@ -18,7 +18,8 @@ int main(int argc, char **argv)
     //mesh iniziali
     std::vector<std::string> files;
     files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/bunny.obj");
-    files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/cow.obj");
+    //files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/cow.obj");
+    files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/sfera.obj");
 
     using namespace cinolib;
 
@@ -28,13 +29,14 @@ int main(int argc, char **argv)
 
     GLcanvas gui;
     SurfaceMeshControls<DrawableTrimesh<>> mesh_controls(&m, &gui);
+    float stencil_size = 0.01f;
 
     //le due mesh vengono pushate nella gui
     gui.push(&m);
     gui.push(&m1);
 
     m.show_vert_color();
-    m1.show_vert_color();
+    //m1.show_vert_color();
 
     //le mesh vengono colorate
     m.poly_set_color(cinolib::Color::PASTEL_PINK());
@@ -115,9 +117,30 @@ int main(int argc, char **argv)
             m2.poly_set_color(cinolib::Color::PASTEL_YELLOW());
 
             gui.pop(&m);
-            gui.pop(&m1);
+            //gui.pop(&m1);
             gui.push(&m2);
         }
+
+        int n_points = 1000;
+        ImGui::Text("Brush size");
+        if(ImGui::SliderFloat("##size", &stencil_size, 0.1f, 5.0f)){
+            m1.scale(stencil_size);
+            m1.updateGL();
+        };
+
+        if(ImGui::SmallButton("Reset"))
+        {
+            m.vert_set_color(Color::WHITE());
+            gui.pop(&m);
+            gui.pop(&m1);
+            m1 = DrawableTrimesh("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/sfera.obj");
+            gui.push(&m);
+            gui.push(&m1);
+            m.updateGL();
+            m1.updateGL();
+        }
+
+
     };
 
     Profiler profiler;
