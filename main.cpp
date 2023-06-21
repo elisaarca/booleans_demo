@@ -12,6 +12,8 @@
 #include <cinolib/meshes/meshes.h>
 
 
+void operazioni(std::vector<std::string> a,std::vector<double> b ,std::vector<uint> c,std::vector<uint> d );
+
 
 int main(int argc, char **argv)
 {
@@ -36,7 +38,7 @@ int main(int argc, char **argv)
     gui.push(&m1);
 
     m.show_vert_color();
-    //m1.show_vert_color();
+    m1.show_vert_color();
 
     //le mesh vengono colorate
     m.poly_set_color(cinolib::Color::PASTEL_PINK());
@@ -46,6 +48,7 @@ int main(int argc, char **argv)
     std::vector<uint> in_tris, bool_tris;
     std::vector<uint> in_labels;
     std::vector<std::bitset<NBIT>> bool_labels;
+
 
     //"riempie i vettori" usando le mesh presenti in files. Dovrà essere caricato su una mesh
     loadMultipleFiles(files, in_coords, in_tris, in_labels);
@@ -75,11 +78,13 @@ int main(int argc, char **argv)
     cinolib::vec3d max_coords(octree.nodes[0].bbox.max.x() +0.5, octree.nodes[0].bbox.max.y() +0.5, octree.nodes[0].bbox.max.z() +0.5);
     computeInsideOut(tm, patches, octree, arr_verts, arr_in_tris, arr_in_labels, max_coords, labels);
 
+    //operazioni(files, in_coords, in_tris, in_labels, &labels);
     uint num_tris_in_final_solution;
 
 
-    DrawableTrimesh<> m4 ("/Users/elisa/Desktop/I.obj");
-    extrude_mesh(m4, vec3d(0,0,1));
+    //per estrudere una mesh
+    //DrawableTrimesh<> m4 ("/Users/elisa/Desktop/I.obj");
+    //extrude_mesh(m4, vec3d(0,0,1));
 
 
     gui.callback_app_controls = [&]()
@@ -101,7 +106,7 @@ int main(int argc, char **argv)
             computeFinalExplicitResult(tm, labels, num_tris_in_final_solution, bool_coords, bool_tris, bool_labels, true);
             m2 = DrawableTrimesh(bool_coords, bool_tris);
             m2.poly_set_color(cinolib::Color::PASTEL_GREEN());
-            m2.bbox().diag();
+            //m2.bbox().diag();
             //m2.scale();
             //m2.translate();
 
@@ -117,7 +122,7 @@ int main(int argc, char **argv)
             m2.poly_set_color(cinolib::Color::PASTEL_YELLOW());
 
             gui.pop(&m);
-            //gui.pop(&m1);
+            gui.pop(&m1);
             gui.push(&m2);
         }
 
@@ -126,13 +131,18 @@ int main(int argc, char **argv)
         if(ImGui::SliderFloat("##size", &stencil_size, 0.1f, 5.0f)){
             m1.scale(stencil_size);
             m1.updateGL();
-        };
+        }
 
         if(ImGui::SmallButton("Reset"))
         {
             m.vert_set_color(Color::WHITE());
             gui.pop(&m);
             gui.pop(&m1);
+
+            files.clear();
+            files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/bunny.obj");
+            files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/sfera.obj");
+
             m1 = DrawableTrimesh("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/sfera.obj");
             gui.push(&m);
             gui.push(&m1);
@@ -143,6 +153,10 @@ int main(int argc, char **argv)
 
     };
 
+    //trovo la posizione del centro della sfera e la sottraggo alle cordnate del punto in cui clicco.
+    //A questo punto sarò in grado di sapere di quanto devo traslare la sfera
+
+    //picker
     Profiler profiler;
     gui.callback_mouse_left_click = [&](int modifiers) -> bool
     {
@@ -150,14 +164,24 @@ int main(int argc, char **argv)
         {
             vec3d p;
             vec2d click = gui.cursor_pos();
+
             if(gui.unproject(click, p)) // transform click in a 3d point
             {
-                profiler.push("Vertex pick");
+                //profiler.push("Vertex pick"); -> probabilmente serve per verificare le prestazioni
                 uint vid = m.pick_vert(p);
-                profiler.pop();
-                std::cout << "ID " << vid << std::endl;
-                m.vert_data(vid).color = Color::RED();
-                m.updateGL();
+                //profiler.pop(); -> probabilmente serve per verificare le prestazioni
+                std::cout << "ID " << vid << std::endl; //stampa l'id del veritice ottenuto nella console
+
+                //coordinate del centro della sfera
+                vec3d center = m1.bbox().center();
+
+               p.x() = p.x()-center.x();
+               p.y() = p.y()-center.y();
+               p.z() = p.y()-center.z();
+               m1.translate(p);
+
+                //m.vert_data(vid).color = Color::RED();
+                m1.updateGL();
             }
         }
         return false;
@@ -165,3 +189,5 @@ int main(int argc, char **argv)
 
     return gui.launch();
 }
+
+
