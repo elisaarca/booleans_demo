@@ -28,22 +28,24 @@ int main(int argc, char **argv)
     DrawableTrimesh<> m(files[0].c_str());
     DrawableTrimesh<> m1(files[1].c_str());
     DrawableTrimesh<> m2;
+    std::cout << "diag: " << m1.bbox().diag() << std::endl;
 
     GLcanvas gui;
     SurfaceMeshControls<DrawableTrimesh<>> mesh_controls(&m, &gui);
-    float stencil_size = 0.01f;
-
+    float current_size = 0.1;
+    m1.scale(0.1);
     //le due mesh vengono pushate nella gui
     gui.push(&m);
-    gui.push(&m1);
+    //gui.push(&m1);
 
     m.show_vert_color();
-    m1.show_vert_color();
+    //m1.show_vert_color();
 
     //le mesh vengono colorate
     m.poly_set_color(cinolib::Color::PASTEL_PINK());
-    m1.poly_set_color(cinolib::Color::PASTEL_VIOLET());
+    //m1.poly_set_color(cinolib::Color::PASTEL_VIOLET());
 
+    //tutto questo mi serve per salvare le informazioni delle mesh su cui sto lavorando
     std::vector<double> in_coords, bool_coords;
     std::vector<uint> in_tris, bool_tris;
     std::vector<uint> in_labels;
@@ -82,15 +84,50 @@ int main(int argc, char **argv)
     uint num_tris_in_final_solution;
 
 
-    //per estrudere una mesh
-    //DrawableTrimesh<> m4 ("/Users/elisa/Desktop/I.obj");
-    //extrude_mesh(m4, vec3d(0,0,1));
-
+    float min = m1.bbox().diag()/100 ;
+    float max = m1.bbox().diag();
 
     gui.callback_app_controls = [&]()
     {
 
         if(ImGui::Button("INTERSECTION")) {
+
+            std::vector<double> in_coords, bool_coords;
+            std::vector<uint> in_tris, bool_tris;
+            std::vector<uint> in_labels;
+            std::vector<std::bitset<NBIT>> bool_labels;
+
+
+            //"riempie i vettori" usando le mesh presenti in files. Dovrà essere caricato su una mesh
+            loadMultipleFiles(files, in_coords, in_tris, in_labels);
+
+            initFPU();
+
+            point_arena arena;
+            std::vector<genericPoint*> arr_verts; // <- it contains the original expl verts + the new_impl verts
+            std::vector<uint> arr_in_tris, arr_out_tris;
+            std::vector<std::bitset<NBIT>> arr_in_labels;
+            std::vector<DuplTriInfo> dupl_triangles;
+            Labels labels;
+            std::vector<phmap::flat_hash_set<uint>> patches;
+            cinolib::FOctree octree; // built with arr_in_tris and arr_in_labels
+
+            customArrangementPipeline(in_coords, in_tris, in_labels, arr_in_tris, arr_in_labels, arena, arr_verts,
+                                      arr_out_tris, labels, octree, dupl_triangles);
+
+            FastTrimesh tm(arr_verts, arr_out_tris, true);
+
+            computeAllPatches(tm, labels, patches, true);
+
+            // the informations about duplicated triangles (removed in arrangements) are restored in the original structures
+            addDuplicateTrisInfoInStructures(dupl_triangles, arr_in_tris, arr_in_labels, octree);
+
+            // parse patches with octree and rays
+            cinolib::vec3d max_coords(octree.nodes[0].bbox.max.x() +0.5, octree.nodes[0].bbox.max.y() +0.5, octree.nodes[0].bbox.max.z() +0.5);
+            computeInsideOut(tm, patches, octree, arr_verts, arr_in_tris, arr_in_labels, max_coords, labels);
+
+
+            //////////
             num_tris_in_final_solution = boolIntersection(tm, labels);
             computeFinalExplicitResult(tm, labels, num_tris_in_final_solution, bool_coords, bool_tris, bool_labels, true);
             m2 = DrawableTrimesh(bool_coords, bool_tris);
@@ -100,7 +137,7 @@ int main(int argc, char **argv)
             gui.pop(&m1);
             gui.push(&m2);
         }
-
+/*
         if(ImGui::Button("UNION")) {
             num_tris_in_final_solution = boolUnion(tm, labels);
             computeFinalExplicitResult(tm, labels, num_tris_in_final_solution, bool_coords, bool_tris, bool_labels, true);
@@ -124,15 +161,34 @@ int main(int argc, char **argv)
             gui.pop(&m);
             gui.pop(&m1);
             gui.push(&m2);
-        }
+        }*/
 
-        int n_points = 1000;
-        ImGui::Text("Brush size");
-        if(ImGui::SliderFloat("##size", &stencil_size, 0.1f, 5.0f)){
-            m1.scale(stencil_size);
+        ///Scale
+        //1%diag
+        //100%diag
+        //
+
+        /*
+        ImGui::Text("Stencil size");
+        if(ImGui::SliderFloat("##size", &current_size, 0.1f, 5.0f)){
+            m1.scale(current_size);
+            m1.updateGL();
+        }*/
+
+
+        //stampa su terminale
+        std::cout << "current: " << current_size << std::endl;
+        std::cout << "max_dim: " << m1.bbox().diag() << std::endl;
+        std::cout << "min_dim: " << min << std::endl;
+
+        ImGui::Text("Stencil size");
+        if(ImGui::SliderFloat("##size", &current_size, 0.1, 5)){
+
+            m1.scale( current_size / m1.bbox().diag());
             m1.updateGL();
         }
 
+        ///Reset
         if(ImGui::SmallButton("Reset"))
         {
             m.vert_set_color(Color::WHITE());
@@ -153,10 +209,10 @@ int main(int argc, char **argv)
 
     };
 
-    //trovo la posizione del centro della sfera e la sottraggo alle cordnate del punto in cui clicco.
+    //trovo la posizione del centro della sfera e la sottraggo alle coordinate del punto in cui clicco.
     //A questo punto sarò in grado di sapere di quanto devo traslare la sfera
 
-    //picker
+    ///Picker
     Profiler profiler;
     gui.callback_mouse_left_click = [&](int modifiers) -> bool
     {
@@ -175,13 +231,20 @@ int main(int argc, char **argv)
                 //coordinate del centro della sfera
                 vec3d center = m1.bbox().center();
 
-               p.x() = p.x()-center.x();
-               p.y() = p.y()-center.y();
-               p.z() = p.y()-center.z();
-               m1.translate(p);
+                //vec3d delta (-1*std::abs(center.x()-p.x()), -1*std::abs(center.y()-p.y()), -1*std::abs(center.z()-p.z()));
+                vec3d reference_point = m.vert(vid);
+                vec3d delta = (m1.bbox().center() - reference_point)*-1;
 
-                //m.vert_data(vid).color = Color::RED();
-                m1.updateGL();
+                /*reference_point.x() = std::abs(reference_point.x()-center.x());
+                reference_point.y() = std::abs(reference_point.y()-center.y());
+                reference_point.z() = std::abs(reference_point.y()-center.z());*/
+                m1.translate(delta);
+
+               m.vert_data(vid).color = Color::RED();
+               gui.push(&m1);
+
+               m.updateGL();
+               m1.updateGL();
             }
         }
         return false;
@@ -189,5 +252,7 @@ int main(int argc, char **argv)
 
     return gui.launch();
 }
+
+
 
 
