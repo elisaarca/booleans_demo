@@ -6,7 +6,6 @@
 
 #include <cinolib/gl/glcanvas.h>
 #include <cinolib/gl/surface_mesh_controls.h>
-#include <cinolib/extrude_mesh.h>
 #include "booleans.h"
 #include <cinolib/profiler.h>
 #include <cinolib/meshes/meshes.h>
@@ -28,12 +27,12 @@ int main(int argc, char **argv)
     DrawableTrimesh<> m(files[0].c_str());
     DrawableTrimesh<> m1(files[1].c_str());
     DrawableTrimesh<> m2;
-    std::cout << "diag: " << m1.bbox().diag() << std::endl;
 
     GLcanvas gui;
     SurfaceMeshControls<DrawableTrimesh<>> mesh_controls(&m, &gui);
     float current_size = 0.1;
     m1.scale(0.1);
+
     //le due mesh vengono pushate nella gui
     gui.push(&m);
     //gui.push(&m1);
@@ -50,7 +49,6 @@ int main(int argc, char **argv)
     std::vector<uint> in_tris, bool_tris;
     std::vector<uint> in_labels;
     std::vector<std::bitset<NBIT>> bool_labels;
-
 
     //"riempie i vettori" usando le mesh presenti in files. Dovrà essere caricato su una mesh
     loadMultipleFiles(files, in_coords, in_tris, in_labels);
@@ -82,10 +80,6 @@ int main(int argc, char **argv)
 
     //operazioni(files, in_coords, in_tris, in_labels, &labels);
     uint num_tris_in_final_solution;
-
-
-    float min = m1.bbox().diag()/100 ;
-    float max = m1.bbox().diag();
 
     gui.callback_app_controls = [&]()
     {
@@ -164,25 +158,8 @@ int main(int argc, char **argv)
         }*/
 
         ///Scale
-        //1%diag
-        //100%diag
-        //
-
-        /*
         ImGui::Text("Stencil size");
-        if(ImGui::SliderFloat("##size", &current_size, 0.1f, 5.0f)){
-            m1.scale(current_size);
-            m1.updateGL();
-        }*/
-
-
-        //stampa su terminale
-        std::cout << "current: " << current_size << std::endl;
-        std::cout << "max_dim: " << m1.bbox().diag() << std::endl;
-        std::cout << "min_dim: " << min << std::endl;
-
-        ImGui::Text("Stencil size");
-        if(ImGui::SliderFloat("##size", &current_size, 0.1, 5)){
+        if(ImGui::SliderFloat("##size", &current_size, 0.1, 1)){
 
             m1.scale( current_size / m1.bbox().diag());
             m1.updateGL();
@@ -205,7 +182,6 @@ int main(int argc, char **argv)
             m.updateGL();
             m1.updateGL();
         }
-
 
     };
 
@@ -231,16 +207,12 @@ int main(int argc, char **argv)
                 //coordinate del centro della sfera
                 vec3d center = m1.bbox().center();
 
-                //vec3d delta (-1*std::abs(center.x()-p.x()), -1*std::abs(center.y()-p.y()), -1*std::abs(center.z()-p.z()));
                 vec3d reference_point = m.vert(vid);
                 vec3d delta = (m1.bbox().center() - reference_point)*-1;
 
-                /*reference_point.x() = std::abs(reference_point.x()-center.x());
-                reference_point.y() = std::abs(reference_point.y()-center.y());
-                reference_point.z() = std::abs(reference_point.y()-center.z());*/
                 m1.translate(delta);
 
-               m.vert_data(vid).color = Color::RED();
+               //m.vert_data(vid).color = Color::RED();
                gui.push(&m1);
 
                m.updateGL();
