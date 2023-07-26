@@ -35,7 +35,7 @@ int main(int argc, char **argv)
     DrawableTrimesh<> arr_mesh[2];
 
     arr_mesh[0] = m; //carica il coniglio
-    arr_mesh[1] = m2; //carica la mucca
+    //arr_mesh[1] = m2; //carica la mucca
     //arr_mesh[2] = m3; //carica la sfera
 
     DrawableTrimesh<> m1;
@@ -48,17 +48,18 @@ int main(int argc, char **argv)
 
     //le due mesh vengono pushate nella gui
     gui.push(&arr_mesh[0]);
-    gui.push(&arr_mesh[1]);
+    //gui.push(&arr_mesh[1]);
 
     arr_mesh[0].updateGL();
-    arr_mesh[1].updateGL();
+    //arr_mesh[1].updateGL();
 
-    m.show_vert_color();
-    m2.show_vert_color();
+    arr_mesh[0].show_vert_color();
+    //m.show_vert_color();
+    //m2.show_vert_color();
 
     //le mesh vengono colorate
     arr_mesh[0].poly_set_color(cinolib::Color::PASTEL_PINK());
-    arr_mesh[1].poly_set_color(cinolib::Color::PASTEL_VIOLET());
+    //arr_mesh[1].poly_set_color(cinolib::Color::PASTEL_VIOLET());
 
 
     //tutto questo mi serve per salvare le informazioni delle mesh su cui sto lavorando
@@ -67,38 +68,6 @@ int main(int argc, char **argv)
     std::vector<uint> in_labels;
     std::vector<std::bitset<NBIT>> bool_labels;
 
-    //"riempie i vettori" usando le mesh presenti in files. Dovrà essere caricato su una mesh
-    //loadMultipleFiles(files, in_coords, in_tris, in_labels);
-    //loadMultipleMesh(arr_mesh, in_coords, in_tris, in_labels);
-    //booleanPipeline(in_coords, in_tris, in_labels, SUBTRACTION, bool_coords, bool_tris, bool_labels);
-    /*m.updateGL();
-    initFPU();
-
-    point_arena arena;
-    std::vector<genericPoint*> arr_verts; // <- it contains the original expl verts + the new_impl verts
-    std::vector<uint> arr_in_tris, arr_out_tris;
-    std::vector<std::bitset<NBIT>> arr_in_labels;
-    std::vector<DuplTriInfo> dupl_triangles;
-    Labels labels;
-    std::vector<phmap::flat_hash_set<uint>> patches;
-    cinolib::FOctree octree; // built with arr_in_tris and arr_in_labels
-
-
-    customArrangementPipeline(in_coords, in_tris, in_labels, arr_in_tris, arr_in_labels, arena, arr_verts,
-                                arr_out_tris, labels, octree, dupl_triangles);
-
-      FastTrimesh tm(arr_verts, arr_out_tris, true);
-
-      computeAllPatches(tm, labels, patches, true);
-
-      // the informations about duplicated triangles (removed in arrangements) are restored in the original structures
-      addDuplicateTrisInfoInStructures(dupl_triangles, arr_in_tris, arr_in_labels, octree);
-
-      // parse patches with octree and rays
-      cinolib::vec3d max_coords(octree.nodes[0].bbox.max.x() +0.5, octree.nodes[0].bbox.max.y() +0.5, octree.nodes[0].bbox.max.z() +0.5);
-      computeInsideOut(tm, patches, octree, arr_verts, arr_in_tris, arr_in_labels, max_coords, labels);
-
-      //operazioni(files, in_coords, in_tris, in_labels, &labels);*/
     uint num_tris_in_final_solution;
 
     //test(arr_mesh);
@@ -108,18 +77,18 @@ int main(int argc, char **argv)
 
         if(ImGui::Button("mucca")) {
             current_size =  0.1 / m.bbox().diag();
-            m1 = m2;
-            gui.pop(&m1);
-            m1.scale(0.1 / m.bbox().diag());
-            m1.updateGL();
+            arr_mesh[1] = m2;
+            gui.pop(&arr_mesh[1]);
+            arr_mesh[1].scale(0.1 / m.bbox().diag());
+            arr_mesh[1].updateGL();
         }
 
         if(ImGui::Button("sfera")) {
             current_size =  0.1 / m.bbox().diag();
-            m1 = m3;
-            gui.pop(&m1);
-            m1.scale(0.1 / m.bbox().diag());;
-            m1.updateGL();
+            arr_mesh[1] = m3;
+            gui.pop(&arr_mesh[1]);
+            arr_mesh[1].scale(0.1 / m.bbox().diag());;
+            arr_mesh[1].updateGL();
         }
 
 
@@ -183,16 +152,17 @@ int main(int argc, char **argv)
         ImGui::Text("Stencil size");
         if(ImGui::SliderFloat("##size", &current_size, m.bbox().diag()*0.01, m.bbox().diag())){
 
-            m1.scale( current_size / m1.bbox().diag());
-            m1.updateGL();
+            arr_mesh[1].scale( current_size / arr_mesh[1].bbox().diag());
+            arr_mesh[1].updateGL();
         }
 
         ///Reset
         if(ImGui::SmallButton("Reset"))
         {
             gui.pop(&m);
-            gui.pop(&m1);
-
+            gui.pop(&arr_mesh[1]);
+            m.updateGL();
+            arr_mesh[1].updateGL();
             files.clear();
 
             files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/bunny.obj");
@@ -213,7 +183,8 @@ int main(int argc, char **argv)
     Profiler profiler;
     gui.callback_mouse_left_click = [&](int modifiers) -> bool
     {
-        gui.pop(&m1);
+        gui.pop(&arr_mesh[1]);
+        //gui.pop(&m1);
         if(modifiers & GLFW_MOD_SHIFT)
         {
             vec3d p;
@@ -227,20 +198,22 @@ int main(int argc, char **argv)
                 std::cout << "ID " << vid << std::endl; //stampa l'id del vertice ottenuto nella console
 
                 //coordinate del centro della sfera
-                vec3d center = m1.bbox().center();
+
+                vec3d center = arr_mesh[1].bbox().center();
+                //vec3d center = m1.bbox().center();
 
                 vec3d reference_point = m.vert(vid);
-                vec3d delta = (m1.bbox().center() - reference_point)*-1;
+                vec3d delta = (arr_mesh[1].bbox().center() - reference_point)*-1;
 
-                m1.translate(delta);
+                arr_mesh[1].translate(delta);
 
                 //m.vert_data(vid).color = Color::RED();
 
-                gui.push(&m1);
+                gui.push(&arr_mesh[1]);
 
                 //m.updateGL();
                 //arr_mesh[1] = m1;
-                m1.updateGL();
+                arr_mesh[1].updateGL();
 
             }
         }
@@ -249,86 +222,6 @@ int main(int argc, char **argv)
 
     return gui.launch();
 }
-
-//inline void loadMesh(const  cinolib::DrawableTrimesh<> *mesh, std::vector<double> &coords, std::vector<uint> &tris) {
-
-/*Se l'estensione è ".obj" o ".OBJ", la funzione legge il file OBJ utilizzando cinolib::read_OBJ,
- * memorizza i vertici e le facce in tmp_verts e tmp_tris, rispettivamente. Quindi, le coordinate
- * dei vertici sono estratte e memorizzate in coords, e gli identificatori dei vertici per ciascuna
- * faccia sono serializzati e assegnati a tris.*/
-
-//restituisci i vertici della mesh
-/*
- *      std::vector<cinolib::vec3d> tmp_verts;
-        std::vector< std::vector<uint> > tmp_tris;
-        cinolib::read_OBJ(filename.c_str(), tmp_verts, tmp_tris);
-        tris = cinolib::serialized_vids_from_polys(tmp_tris);
-    }*/
-// tris = cinolib::serialized_vids_from_polys(mesh->vector_polys());
-//coords = cinolib::serialized_xyz_from_vec3d(mesh->vector_verts());
-//}
-
-
-/*inline void loadMultipleFiles(const cinolib::DrawableTrimesh<> mesh[], std::vector<double> &coords, std::vector<uint> &tris, std::vector<uint> &labels)
-{
-    for(uint f_id = 0; f_id < files.size(); f_id++)
-    {
-        std::vector<double> tmp_coords;
-        std::vector<uint> tmp_tris;
-
-        load(files[f_id], tmp_coords, tmp_tris);
-
-        uint off = static_cast<uint>(coords.size() / 3); // prev num verts
-
-        coords.insert(coords.end(), tmp_coords.begin(), tmp_coords.end());
-
-        for(auto &i : tmp_tris) tris.push_back(i + off);
-
-        for(uint i = 0; i < tmp_tris.size() / 3; i++)
-            labels.push_back(f_id);
-    }
-}
-*/
-
-
-
-/*
-inline void loadMultipleMesh(const cinolib::DrawableTrimesh<> mesh[],std::vector<double> &coords,std::vector<uint> &tris, std::vector<uint> &labels){
-
-    int n = sizeof(mesh) / sizeof(mesh[0]);
-    //stampa su terminale
-    std::cout << "Numero di mesh: " << n << std::endl;
-    for(uint f_id = 0; f_id < n; f_id++){
-
-        std::vector<double> tmp_coords; //coordinate dei vertici della mesh
-        std::vector<uint> tmp_tris; //facce della mesh
-
-        //cosa fa questa? riempie tmp_coords e tmp_tris con i dati del file f_id
-        loadMesh(&mesh[f_id], tmp_coords, tmp_tris);
-
-        //facce della mesh
-        //salva le cordinate della mesh mesh[f_id] in tmp_verts
-
-        //salva le facce della mesh mesh[f_id] in tmp_tris
-
-
-        //tmp_tris = cinolib::serialized_vids_from_polys(mesh[f_id])
-
-        //coordinate dei vertici della mesh
-
-        /*salva le coordinate dei vertici della mesh mesh[f_id] in tmp_coords
-        tmp_coords = cinolib::serialized_xyz_from_vec3d(mesh[f_id].vector_verts());
-        tmp_tris = cinolib::serialized_vids_from_polys(mesh[f_id].vector_polys());
-
-        uint off = static_cast<uint>(coords.size() / 3); // prev num verts
-        //coords.insert(coords.end(), tmp_coords.begin(), tmp_coords.end());
-
-        for(auto &i : tmp_tris) tris.push_back(i + off);
-
-        for(uint i = 0; i < tmp_tris.size() / 3; i++)
-            labels.push_back(f_id);*/
-// }
-//}
 
 inline void loadMultipleMesh(const cinolib::DrawableTrimesh<> mesh[], int dim, std::vector<double> &coords, std::vector<uint> &tris, std::vector<uint> &labels)
 {
