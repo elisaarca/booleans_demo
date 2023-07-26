@@ -10,10 +10,7 @@
 #include <cinolib/profiler.h>
 #include <cinolib/meshes/meshes.h>
 
-
-void operazioni(std::vector<std::string> a,std::vector<double> b ,std::vector<uint> c,std::vector<uint> d );
-inline void test(const cinolib::DrawableTrimesh<> mesh[]);
-inline void loadMultipleMesh(const cinolib::DrawableTrimesh<> mesh[], int dim, std::vector<double> &coords, std::vector<uint> &tris, std::vector<uint> &labels);
+inline void loadMultipleMesh(const cinolib::DrawableTrimesh<> *mesh, int dim, std::vector<double> &coords, std::vector<uint> &tris, std::vector<uint> &labels);
 
 int main(int argc, char **argv)
 {
@@ -32,7 +29,10 @@ int main(int argc, char **argv)
     //sfera
     DrawableTrimesh<> m3(files[2].c_str());
 
-    DrawableTrimesh<> arr_mesh[2];
+     //*arr_mesh[2];
+
+     int array_size = 2;
+    auto* arr_mesh = new DrawableTrimesh<>[array_size];
 
     arr_mesh[0] = m; //carica il coniglio
     //arr_mesh[1] = m2; //carica la mucca
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
     gui.push(&arr_mesh[0]);
     //gui.push(&arr_mesh[1]);
 
-    arr_mesh[0].updateGL();
+    //arr_mesh[0].updateGL();
     //arr_mesh[1].updateGL();
 
     arr_mesh[0].show_vert_color();
@@ -60,6 +60,7 @@ int main(int argc, char **argv)
     //le mesh vengono colorate
     arr_mesh[0].poly_set_color(cinolib::Color::PASTEL_PINK());
     //arr_mesh[1].poly_set_color(cinolib::Color::PASTEL_VIOLET());
+    arr_mesh[0].updateGL();
 
 
     //tutto questo mi serve per salvare le informazioni delle mesh su cui sto lavorando
@@ -70,7 +71,6 @@ int main(int argc, char **argv)
 
     uint num_tris_in_final_solution;
 
-    //test(arr_mesh);
 
     gui.callback_app_controls = [&]()
     {
@@ -81,6 +81,7 @@ int main(int argc, char **argv)
             gui.pop(&arr_mesh[1]);
             arr_mesh[1].scale(0.1 / m.bbox().diag());
             arr_mesh[1].updateGL();
+
         }
 
         if(ImGui::Button("sfera")) {
@@ -94,17 +95,35 @@ int main(int argc, char **argv)
 
         if(ImGui::Button("SUBTRACTION")) {
 
+
+            in_coords.clear();
+            bool_coords.clear();
+            in_tris.clear();
+            bool_tris.clear();
+            in_labels.clear();
+            bool_labels.clear();
+
+
+
+
+            //arr_mesh[1] -> save("/Users/elisa/Desktop/stencil.obj");
             int arraySize = sizeof(arr_mesh) / sizeof(arr_mesh[0]);
-
-            loadMultipleMesh(arr_mesh, arraySize, in_coords, in_tris, in_labels);
+            std::cout << "ID " << "ciao1" << std::endl;
+            loadMultipleMesh(arr_mesh, array_size, in_coords, in_tris, in_labels);
+            std::cout << "ID " << "ciao2" << std::endl;
             booleanPipeline(in_coords, in_tris, in_labels, SUBTRACTION, bool_coords, bool_tris, bool_labels);
-
+            std::cout << "ID " << "ciao3" << std::endl;
             mresult = DrawableTrimesh(bool_coords, bool_tris);
+            std::cout << "ID " << "ciao4" << std::endl;
             mresult.poly_set_color(cinolib::Color::PASTEL_YELLOW());
 
             gui.pop(&arr_mesh[0]);
             gui.pop(&arr_mesh[1]);
             gui.push(&mresult);
+
+            arr_mesh[0] = mresult;
+
+            //arr_mesh[0] -> save("/Users/elisa/Desktop/risultato.obj");
         }
 
         /* if(ImGui::Button("INTERSECTION")) {
@@ -159,20 +178,16 @@ int main(int argc, char **argv)
         ///Reset
         if(ImGui::SmallButton("Reset"))
         {
-            gui.pop(&m);
+            gui.pop(&arr_mesh[0]);
             gui.pop(&arr_mesh[1]);
-            m.updateGL();
+            gui.pop(&mresult);
+            arr_mesh[0].updateGL();
             arr_mesh[1].updateGL();
-            files.clear();
+            mresult.updateGL();
 
-            files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/bunny.obj");
-            files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/sfera.obj");
-            m = DrawableTrimesh("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/bunny.obj");
-            m2= DrawableTrimesh("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/cow.obj");
-            m3 = DrawableTrimesh("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/sfera.obj");
-
-            gui.push(&m);
-            m.updateGL();
+            arr_mesh[0] = DrawableTrimesh("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/bunny.obj");
+            gui.push(&arr_mesh[0]);
+            arr_mesh[0].updateGL();
         }
     };
 
@@ -197,8 +212,7 @@ int main(int argc, char **argv)
                 //profiler.pop(); -> probabilmente serve per verificare le prestazioni
                 std::cout << "ID " << vid << std::endl; //stampa l'id del vertice ottenuto nella console
 
-                //coordinate del centro della sfera
-
+                //coordinate del centro della mesh
                 vec3d center = arr_mesh[1].bbox().center();
                 //vec3d center = m1.bbox().center();
 
@@ -210,9 +224,6 @@ int main(int argc, char **argv)
                 //m.vert_data(vid).color = Color::RED();
 
                 gui.push(&arr_mesh[1]);
-
-                //m.updateGL();
-                //arr_mesh[1] = m1;
                 arr_mesh[1].updateGL();
 
             }
@@ -223,10 +234,9 @@ int main(int argc, char **argv)
     return gui.launch();
 }
 
-inline void loadMultipleMesh(const cinolib::DrawableTrimesh<> mesh[], int dim, std::vector<double> &coords, std::vector<uint> &tris, std::vector<uint> &labels)
+inline void loadMultipleMesh(const cinolib::DrawableTrimesh<> *mesh, int dim, std::vector<double> &coords, std::vector<uint> &tris, std::vector<uint> &labels)
 {
 
-    std::cout << "Numero di mesh: " << dim << std::endl;
     for(uint f_id = 0; f_id < dim; f_id++)
     {
         std::vector<double> tmp_coords; //vettore di coordinate 3d temporanee
