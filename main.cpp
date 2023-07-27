@@ -32,7 +32,8 @@ int main(int argc, char **argv)
      //*arr_mesh[2];
 
      int array_size = 2;
-    auto* arr_mesh = new DrawableTrimesh<>[array_size];
+     auto* arr_mesh = new DrawableTrimesh<>[array_size];
+    const char* camera; //stringa che contiene le informazioni della camera
 
     arr_mesh[0] = m; //carica il coniglio
     //arr_mesh[1] = m2; //carica la mucca
@@ -93,8 +94,8 @@ int main(int argc, char **argv)
         }
 
 
-        if(ImGui::Button("SUBTRACTION")) {
 
+        if(ImGui::Button("SUBTRACTION")) {
 
             in_coords.clear();
             bool_coords.clear();
@@ -103,22 +104,17 @@ int main(int argc, char **argv)
             in_labels.clear();
             bool_labels.clear();
 
-
-
-
             //arr_mesh[1] -> save("/Users/elisa/Desktop/stencil.obj");
             int arraySize = sizeof(arr_mesh) / sizeof(arr_mesh[0]);
-            std::cout << "ID " << "ciao1" << std::endl;
             loadMultipleMesh(arr_mesh, array_size, in_coords, in_tris, in_labels);
-            std::cout << "ID " << "ciao2" << std::endl;
+
             booleanPipeline(in_coords, in_tris, in_labels, SUBTRACTION, bool_coords, bool_tris, bool_labels);
-            std::cout << "ID " << "ciao3" << std::endl;
             mresult = DrawableTrimesh(bool_coords, bool_tris);
-            std::cout << "ID " << "ciao4" << std::endl;
-            mresult.poly_set_color(cinolib::Color::PASTEL_YELLOW());
+
 
             gui.pop(&arr_mesh[0]);
             gui.pop(&arr_mesh[1]);
+
             gui.push(&mresult);
 
             arr_mesh[0] = mresult;
@@ -142,30 +138,42 @@ int main(int argc, char **argv)
 
          }*/
 
-        /*if(ImGui::Button("UNION")) {
-            num_tris_in_final_solution = boolUnion(tm, labels);
-            computeFinalExplicitResult(tm, labels, num_tris_in_final_solution, bool_coords, bool_tris, bool_labels, true);
-            m2 = DrawableTrimesh(bool_coords, bool_tris);
-            m2.poly_set_color(cinolib::Color::PASTEL_GREEN());
-            //m2.bbox().diag();
-            //m2.scale();
-            //m2.translate();
+        if(ImGui::Button("UNION")) {
 
-            gui.pop(&m);
-            gui.pop(&m1);
-            gui.push(&m2);
-        }*/
+            in_coords.clear();
+            bool_coords.clear();
+            in_tris.clear();
+            bool_tris.clear();
+            in_labels.clear();
+            bool_labels.clear();
 
-        /*if(ImGui::Button("SUBTRACTION")) {
-            num_tris_in_final_solution = boolSubtraction(tm, labels);
-            computeFinalExplicitResult(tm, labels, num_tris_in_final_solution, bool_coords, bool_tris, bool_labels, true);
+            //arr_mesh[1] -> save("/Users/elisa/Desktop/stencil.obj");
+            int arraySize = sizeof(arr_mesh) / sizeof(arr_mesh[0]);
+            loadMultipleMesh(arr_mesh, array_size, in_coords, in_tris, in_labels);
+            booleanPipeline(in_coords, in_tris, in_labels, UNION, bool_coords, bool_tris, bool_labels);
             mresult = DrawableTrimesh(bool_coords, bool_tris);
-            mresult.poly_set_color(cinolib::Color::PASTEL_YELLOW());
 
-            gui.pop(&m);
-            gui.pop(&m1);
+            gui.pop(&arr_mesh[0]);
+            gui.pop(&arr_mesh[1]);
+
             gui.push(&mresult);
-        }*/
+
+            arr_mesh[0] = mresult;
+        }
+
+        if(ImGui::Button("CTRL-C")) {
+            glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
+        }
+
+        if(ImGui::Button("CTRL-V")) {
+            gui.camera.deserialize(glfwGetClipboardString(gui.window));
+            glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
+
+            gui.update_GL_matrices();
+        }
+
+
+
 
         ///Scale
         ImGui::Text("Stencil size");
@@ -198,10 +206,13 @@ int main(int argc, char **argv)
     Profiler profiler;
     gui.callback_mouse_left_click = [&](int modifiers) -> bool
     {
-        gui.pop(&arr_mesh[1]);
+
         //gui.pop(&m1);
         if(modifiers & GLFW_MOD_SHIFT)
         {
+            //stampa dati camera
+
+            gui.pop(&arr_mesh[1]);
             vec3d p;
             vec2d click = gui.cursor_pos();
 
@@ -224,7 +235,9 @@ int main(int argc, char **argv)
                 //m.vert_data(vid).color = Color::RED();
 
                 gui.push(&arr_mesh[1]);
+
                 arr_mesh[1].updateGL();
+
 
             }
         }
