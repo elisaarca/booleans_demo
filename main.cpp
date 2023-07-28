@@ -93,8 +93,6 @@ int main(int argc, char **argv)
             arr_mesh[1].updateGL();
         }
 
-
-
         if(ImGui::Button("SUBTRACTION")) {
 
             in_coords.clear();
@@ -157,10 +155,14 @@ int main(int argc, char **argv)
             booleanPipeline(in_coords, in_tris, in_labels, UNION, bool_coords, bool_tris, bool_labels);
             mresult = DrawableTrimesh(bool_coords, bool_tris);
 
+            glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
             gui.pop(&arr_mesh[0]);
             gui.pop(&arr_mesh[1]);
 
             gui.push(&mresult);
+            gui.camera.deserialize(glfwGetClipboardString(gui.window));
+            glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
+            gui.update_GL_matrices();
 
             arr_mesh[0] = mresult;
         }
