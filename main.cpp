@@ -111,11 +111,15 @@ int main(int argc, char **argv)
             booleanPipeline(in_coords, in_tris, in_labels, SUBTRACTION, bool_coords, bool_tris, bool_labels);
             mresult = DrawableTrimesh(bool_coords, bool_tris);
 
-
+            glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
             gui.pop(&arr_mesh[0]);
             gui.pop(&arr_mesh[1]);
 
             gui.push(&mresult);
+
+            gui.camera.deserialize(glfwGetClipboardString(gui.window));
+            glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
+            gui.update_GL_matrices();
 
             arr_mesh[0] = mresult;
 
@@ -210,7 +214,8 @@ int main(int argc, char **argv)
         //gui.pop(&m1);
         if(modifiers & GLFW_MOD_SHIFT)
         {
-            //stampa dati camera
+            //salva dati camera
+            glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
 
             gui.pop(&arr_mesh[1]);
             vec3d p;
@@ -236,9 +241,12 @@ int main(int argc, char **argv)
 
                 gui.push(&arr_mesh[1]);
 
+                //riporta la base nella corretta posizione
+                gui.camera.deserialize(glfwGetClipboardString(gui.window));
+                glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
+                gui.update_GL_matrices();
+
                 arr_mesh[1].updateGL();
-
-
             }
         }
         return false;
@@ -268,6 +276,7 @@ inline void loadMultipleMesh(const cinolib::DrawableTrimesh<> *mesh, int dim, st
             labels.push_back(f_id);
     }
 }
+
 
 
 
