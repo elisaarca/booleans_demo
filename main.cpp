@@ -10,7 +10,7 @@
 #include <cinolib/profiler.h>
 #include <cinolib/meshes/meshes.h>
 
-inline void loadMultipleMesh(const cinolib::DrawableTrimesh<> *mesh, int dim, std::vector<double> &coords, std::vector<uint> &tris, std::vector<uint> &labels);
+inline void loadMultipleMesh(std::vector<cinolib::DrawableTrimesh<>> &mesh, int dim, std::vector<double> &coords, std::vector<uint> &tris, std::vector<uint> &labels);
 
 int main(int argc, char **argv)
 {
@@ -30,16 +30,15 @@ int main(int argc, char **argv)
     //sfera
     DrawableTrimesh<> m3(files[2].c_str());
 
-    int array_size = 10;
-    auto* arr_mesh = new DrawableTrimesh<>[array_size];
+    std::vector<DrawableTrimesh<>> myvector;
+
+
 
     const char* camera; //stringa che contiene le informazioni della camera
 
-    arr_mesh[0] = m; //carica il coniglio
-    //arr_mesh[1] = m2; //carica la mucca
-    //arr_mesh[2] = m3; //carica la sfera
+    myvector.push_back(m); //carica il coniglio
 
-    int size = 0;
+    int index = 0;
 
     DrawableTrimesh<> m1;
 
@@ -49,22 +48,14 @@ int main(int argc, char **argv)
     SurfaceMeshControls<DrawableTrimesh<>> mesh_controls(&m, &gui);
     float current_size = 0.1 / m.bbox().diag();
 
-    //le due mesh vengono pushate nella gui
-    gui.push(&arr_mesh[0]);
-    //gui.push(&arr_mesh[1]);
-
-    //arr_mesh[0].updateGL();
-    //arr_mesh[1].updateGL();
-
-    arr_mesh[0].show_vert_color();
-    //m.show_vert_color();
-    //m2.show_vert_color();
+    //la mesh del coniglio viene pushata nella gui
+    gui.push(&myvector[0]);
 
     //le mesh vengono colorate
-    arr_mesh[0].poly_set_color(cinolib::Color::PASTEL_PINK());
-    //arr_mesh[1].poly_set_color(cinolib::Color::PASTEL_VIOLET());
-    arr_mesh[0].updateGL();
-
+    //myvector[0].show_vert_color();
+    //myvector[0].show_poly_color();
+    //myvector[0].poly_set_color(cinolib::Color::PASTEL_PINK());
+    //myvector[0].updateGL();
 
     //tutto questo mi serve per salvare le informazioni delle mesh su cui sto lavorando
     std::vector<double> in_coords, bool_coords;
@@ -76,25 +67,65 @@ int main(int argc, char **argv)
     gui.callback_app_controls = [&]()
     {
 
+        ImGui::Text("");
+        ImGui::Text("STENCILS");
         if(ImGui::Button("mucca")) {
-            ++size;
-            current_size =  0.1 / m.bbox().diag();
-            arr_mesh[size] = m2;
-            gui.pop(&arr_mesh[size]);
-            arr_mesh[size].scale(0.1 / m.bbox().diag());
-            arr_mesh[size].updateGL();
+
+            //ctrl c - posizione camera
+            glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
+            ++index;
+            current_size =  0.1 / myvector[0].bbox().diag();
+
+            for (i=0; i<index; i++) {
+                gui.pop(&myvector[i]);
+            }
+
+            myvector.push_back(m2);
+
+            for (i=0; i<index; i++) {
+                gui.push(&myvector[i]);
+            }
+
+            myvector[index].scale(0.1 / myvector[0].bbox().diag());
+
+            //ctrl v - posizione camera
+            gui.camera.deserialize(glfwGetClipboardString(gui.window));
+            glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
+            gui.update_GL_matrices();
+
+            gui.pop(&myvector[index]);
+            myvector[i].updateGL();
         }
 
         if(ImGui::Button("sfera")) {
-            ++size;
-            current_size =  0.1 / m.bbox().diag();
-            arr_mesh[size] = m3;
-            gui.pop(&arr_mesh[size]);
-            arr_mesh[size].scale(0.1 / m.bbox().diag());;
-            arr_mesh[size].updateGL();
+
+            glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
+            ++index;
+            current_size =  0.1 / myvector[0].bbox().diag();
+
+            for (i=0; i<index; i++) {
+                gui.pop(&myvector[i]);
+            }
+
+            myvector.push_back(m3);
+
+            for (i=0; i<index; i++) {
+                gui.push(&myvector[i]);
+            }
+
+            myvector[index].scale(0.1 / myvector[0].bbox().diag());
+
+            gui.camera.deserialize(glfwGetClipboardString(gui.window));
+            glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
+            gui.update_GL_matrices();
+
+            gui.pop(&myvector[index]);
+            myvector[i].updateGL();
         }
 
-        if(ImGui::Button("SUBTRACTION")) {
+        ImGui::Text("");
+        ImGui::Text("BOOLEAN OPERATIONS");
+        if(ImGui::Button("subtraction")) {
 
             in_coords.clear();
             bool_coords.clear();
@@ -104,38 +135,37 @@ int main(int argc, char **argv)
             bool_labels.clear();
 
             //stampa size
-            std::cout << "size: " << size << std::endl;
+            std::cout << "size: " << index << std::endl;
 
-            //arr_mesh[1] -> save("/Users/elisa/Desktop/stencil.obj");
-            //int arraySize = sizeof(arr_mesh) / sizeof(arr_mesh[0]);
-            loadMultipleMesh(arr_mesh, size, in_coords, in_tris, in_labels);
-
+            //vengono messi insieme tutti i dati delle mesh
+            loadMultipleMesh(myvector,  index, in_coords, in_tris, in_labels);
             booleanPipeline(in_coords, in_tris, in_labels, SUBTRACTION, bool_coords, bool_tris, bool_labels);
             mresult = DrawableTrimesh(bool_coords, bool_tris);
 
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
 
 
-            for (i=0; i <= size; i++) {
-                gui.pop(&arr_mesh[i]);
-                arr_mesh[i].updateGL();
+            for (i=0; i<=index; i++) {
+                gui.pop(&myvector[i]);
             }
 
-            gui.push(&mresult);
+            //ripulisce completamente il vettore
+            myvector.clear();
+
+            myvector.push_back(mresult);
+            gui.push(&myvector[0]);
 
             gui.camera.deserialize(glfwGetClipboardString(gui.window));
             glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
             gui.update_GL_matrices();
 
-            arr_mesh[0] = mresult;
+            myvector[0].updateGL();
 
-            arr_mesh[0].updateGL();
-
-            size = 0;
+            index = 0;
         }
 
 
-        if(ImGui::Button("UNION")) {
+        if(ImGui::Button("union")) {
 
             in_coords.clear();
             bool_coords.clear();
@@ -144,58 +174,66 @@ int main(int argc, char **argv)
             in_labels.clear();
             bool_labels.clear();
 
-            loadMultipleMesh(arr_mesh, size, in_coords, in_tris, in_labels);
+            //stampa size
+            std::cout << "size: " << index << std::endl;
 
+            //vengono messi insieme tutti i dati delle mesh
+            loadMultipleMesh(myvector,  index, in_coords, in_tris, in_labels);
             booleanPipeline(in_coords, in_tris, in_labels, UNION, bool_coords, bool_tris, bool_labels);
             mresult = DrawableTrimesh(bool_coords, bool_tris);
 
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
 
-            for (i=0; i <= size; i++) {
-                gui.pop(&arr_mesh[i]);
-                arr_mesh[i].updateGL();
+
+            //svuotamento gui -> il vector da problemi se ci sono mesh nella gui
+            for (i=0; i<=index; i++) {
+                gui.pop(&myvector[i]);
             }
 
-            gui.push(&mresult);
+            //ripulisce completamente il vettore
+            myvector.clear();
+
+            myvector.push_back(mresult);
+            gui.push(&myvector[0]);
 
             gui.camera.deserialize(glfwGetClipboardString(gui.window));
             glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
             gui.update_GL_matrices();
 
-            arr_mesh[0] = mresult;
+            myvector[0].updateGL();
 
-            gui.pop(&mresult);
-            mresult.updateGL();
-
-            arr_mesh[0].updateGL();
-
-            size = 0;
+            index = 0;
         }
 
 
         ///Scale
-        ImGui::Text("Stencil size");
-        if(ImGui::SliderFloat("##size", &current_size, arr_mesh[0].bbox().diag()*0.01, arr_mesh[0].bbox().diag())){
+        //La scalatura si riferisce sempre all'ultima mesh aggiunta
+        ImGui::Text("");
+        ImGui::Text("STENCIL SCALE");
+        if(ImGui::SliderFloat("##size", &current_size, myvector[0].bbox().diag()*0.01, myvector[0].bbox().diag())&& index > 0){
 
-            arr_mesh[size].scale( current_size / arr_mesh[size].bbox().diag());
-            arr_mesh[size].updateGL();
+            myvector[index].scale( current_size / myvector[index].bbox().diag());
+            myvector[index].updateGL();
         }
 
         ///Reset
         if(ImGui::SmallButton("Reset"))
         {
 
-            for (i=0; i <= size; i++) {
-                gui.pop(&arr_mesh[i]);
-                arr_mesh[i].updateGL();
+            for (i=0; i <= index; i++) {
+                gui.pop(&myvector[i]);
+                myvector[i].updateGL();
             }
 
             gui.pop(&mresult);
             mresult.updateGL();
-            arr_mesh[0] = DrawableTrimesh("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/bunny.obj");
-            gui.push(&arr_mesh[0]);
-            arr_mesh[0].updateGL();
-            size = 0;
+
+            myvector.clear();
+
+            myvector.push_back(m);
+            gui.push(&myvector[0]);
+            myvector[0].updateGL();
+            index = 0;
         }
     };
 
@@ -208,7 +246,7 @@ int main(int argc, char **argv)
     {
 
         //gui.pop(&m1);
-        if(modifiers & GLFW_MOD_SHIFT && size > 0)
+        if(modifiers & GLFW_MOD_SHIFT && index > 0)
         {
             //salva dati camera
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
@@ -219,27 +257,27 @@ int main(int argc, char **argv)
             if(gui.unproject(click, p)) // transform click in a 3d point
             {
                 //profiler.push("Vertex pick"); -> probabilmente serve per verificare le prestazioni
-                uint vid = arr_mesh[0].pick_vert(p);
+                uint vid = myvector[0].pick_vert(p);
                 //profiler.pop(); -> probabilmente serve per verificare le prestazioni
                 std::cout << "ID " << vid << std::endl; //stampa l'id del vertice ottenuto nella console
 
                 //coordinate del centro della mesh
-                vec3d center = arr_mesh[size].bbox().center();
+                vec3d center = myvector[index].bbox().center();
                 //vec3d center = m1.bbox().center();
 
-                vec3d reference_point = arr_mesh[0].vert(vid);
-                vec3d delta = (arr_mesh[size].bbox().center() - reference_point)*-1;
+                vec3d reference_point = myvector[0].vert(vid);
+                vec3d delta = (myvector[index].bbox().center() - reference_point)*-1;
 
-                arr_mesh[size].translate(delta);
+                myvector[index].translate(delta);
 
-                gui.push(&arr_mesh[size]);
+                gui.push(&myvector[index]);
 
                 //riporta la base nella corretta posizione
                 gui.camera.deserialize(glfwGetClipboardString(gui.window));
                 glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
                 gui.update_GL_matrices();
 
-                arr_mesh[size].updateGL();
+                myvector[index].updateGL();
             }
         }
         return false;
@@ -248,7 +286,7 @@ int main(int argc, char **argv)
     return gui.launch();
 }
 
-inline void loadMultipleMesh(const cinolib::DrawableTrimesh<> *mesh, int dim, std::vector<double> &coords, std::vector<uint> &tris, std::vector<uint> &labels)
+inline void loadMultipleMesh(std::vector<cinolib::DrawableTrimesh<>> &mesh, int dim, std::vector<double> &coords, std::vector<uint> &tris, std::vector<uint> &labels)
 {
 
     for(uint f_id = 0; f_id <= dim; f_id++)
