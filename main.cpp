@@ -32,6 +32,8 @@ int main(int argc, char **argv)
 
     std::vector<DrawableTrimesh<>> myvector;
 
+    bool flag= true;
+
 
 
     const char* camera; //stringa che contiene le informazioni della camera
@@ -80,6 +82,10 @@ int main(int argc, char **argv)
                 gui.pop(&myvector[i]);
             }
 
+            if (!flag ) {
+                myvector.pop_back();
+                index--;
+            }
             myvector.push_back(m2);
 
             for (i=0; i<index; i++) {
@@ -95,9 +101,12 @@ int main(int argc, char **argv)
 
             gui.pop(&myvector[index]);
             myvector[i].updateGL();
+            flag = false;
         }
 
         if(ImGui::Button("sfera")) {
+
+
 
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
             ++index;
@@ -105,6 +114,10 @@ int main(int argc, char **argv)
 
             for (i=0; i<index; i++) {
                 gui.pop(&myvector[i]);
+            }
+            if (!flag ) {
+                myvector.pop_back();
+                index--;
             }
 
             myvector.push_back(m3);
@@ -120,7 +133,8 @@ int main(int argc, char **argv)
             gui.update_GL_matrices();
 
             gui.pop(&myvector[index]);
-            myvector[i].updateGL();
+            myvector[index].updateGL();
+            flag = false;
         }
 
         ImGui::Text("");
@@ -138,6 +152,7 @@ int main(int argc, char **argv)
             std::cout << "size: " << index << std::endl;
 
             //vengono messi insieme tutti i dati delle mesh
+            if (!flag) index = index -1; //se non ho fatto il pick, devo sottrarre 1 all'indice
             loadMultipleMesh(myvector,  index, in_coords, in_tris, in_labels);
             booleanPipeline(in_coords, in_tris, in_labels, SUBTRACTION, bool_coords, bool_tris, bool_labels);
             mresult = DrawableTrimesh(bool_coords, bool_tris);
@@ -162,6 +177,7 @@ int main(int argc, char **argv)
             myvector[0].updateGL();
 
             index = 0;
+            flag = true;
         }
 
 
@@ -178,6 +194,7 @@ int main(int argc, char **argv)
             std::cout << "size: " << index << std::endl;
 
             //vengono messi insieme tutti i dati delle mesh
+            if (!flag) index = index -1; //se non ho fatto il pick, devo sottrarre 1 all'indice
             loadMultipleMesh(myvector,  index, in_coords, in_tris, in_labels);
             booleanPipeline(in_coords, in_tris, in_labels, UNION, bool_coords, bool_tris, bool_labels);
             mresult = DrawableTrimesh(bool_coords, bool_tris);
@@ -203,6 +220,7 @@ int main(int argc, char **argv)
             myvector[0].updateGL();
 
             index = 0;
+            flag = true;
         }
 
 
@@ -234,6 +252,7 @@ int main(int argc, char **argv)
             gui.push(&myvector[0]);
             myvector[0].updateGL();
             index = 0;
+            flag = true;
         }
     };
 
@@ -248,6 +267,7 @@ int main(int argc, char **argv)
         //gui.pop(&m1);
         if(modifiers & GLFW_MOD_SHIFT && index > 0)
         {
+            flag = true;
             //salva dati camera
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
 
