@@ -10,31 +10,34 @@
 #include <cinolib/profiler.h>
 #include <cinolib/meshes/meshes.h>
 
+
 inline void loadMultipleMesh(std::vector<cinolib::DrawableTrimesh<>> &mesh, int dim, std::vector<double> &coords, std::vector<uint> &tris, std::vector<uint> &labels);
 
 int main(int argc, char **argv)
 {
     int i;
-    //mesh iniziali
-    std::vector<std::string> files;
-    files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/bunny.obj");
-    files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/cow.obj");
-    files.push_back("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/sfera.obj");
 
     using namespace cinolib;
 
-    //coniglio
-    DrawableTrimesh<> m(files[0].c_str());
-    //mucca
-    DrawableTrimesh<> m2(files[1].c_str());
-    //sfera
-    DrawableTrimesh<> m3(files[2].c_str());
+    ///Mesh
+    //base
+    DrawableTrimesh<> m("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/bunny.obj");
 
+    ///letters
+    DrawableTrimesh<> letterE("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/letters/letterE.obj");
+    DrawableTrimesh<> letterL("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/letters/letterL.obj");
+    DrawableTrimesh<> letterI("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/letters/letterI.obj");
+    DrawableTrimesh<> letterS("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/letters/letterS.obj");
+    DrawableTrimesh<> letterA("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/letters/letterA.obj");
+
+    ///shapes
+    DrawableTrimesh<> sphere("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/sphere.obj");
+    DrawableTrimesh<> heart("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/shapes/heart.obj");
+    DrawableTrimesh<> star("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/shapes/star.obj");
+    DrawableTrimesh<> triangle ("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/shapes/triangle.obj");
     std::vector<DrawableTrimesh<>> myvector;
 
     bool flag= true;
-
-
 
     const char* camera; //stringa che contiene le informazioni della camera
 
@@ -47,9 +50,9 @@ int main(int argc, char **argv)
     DrawableTrimesh<> mresult;
 
     GLcanvas gui;
-    SurfaceMeshControls<DrawableTrimesh<>> mesh_controls(&m, &gui);
-    float current_size = 0.1 / m.bbox().diag();
 
+    float current_size = 0.1 / m.bbox().diag();
+    float current_angle = 0 ;
     //la mesh del coniglio viene pushata nella gui
     gui.push(&myvector[0]);
 
@@ -65,13 +68,17 @@ int main(int argc, char **argv)
     std::vector<uint> in_labels;
     std::vector<std::bitset<NBIT>> bool_labels;
 
+    //opzioni che mi permettono di salvare etc.
+
+
 
     gui.callback_app_controls = [&]()
     {
 
         ImGui::Text("");
         ImGui::Text("STENCILS");
-        if(ImGui::Button("mucca")) {
+        ImGui::Text("> letters");
+        if(ImGui::Button("E")) {
 
             //ctrl c - posizione camera
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
@@ -86,13 +93,145 @@ int main(int argc, char **argv)
                 myvector.pop_back();
                 index--;
             }
-            myvector.push_back(m2);
+            myvector.push_back(letterE);
 
             for (i=0; i<index; i++) {
                 gui.push(&myvector[i]);
             }
 
-            myvector[index].scale(0.1 / myvector[0].bbox().diag());
+            myvector[index].scale(0.01 / myvector[0].bbox().diag());
+
+            //ctrl v - posizione camera
+            gui.camera.deserialize(glfwGetClipboardString(gui.window));
+            glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
+            gui.update_GL_matrices();
+
+            gui.pop(&myvector[index]);
+            myvector[i].updateGL();
+            flag = false;
+        }
+        ImGui::SameLine();
+        if(ImGui::Button("L")) {
+
+            //ctrl c - posizione camera
+            glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
+            ++index;
+            current_size =  0.1 / myvector[0].bbox().diag();
+
+            for (i=0; i<index; i++) {
+                gui.pop(&myvector[i]);
+            }
+
+            if (!flag ) {
+                myvector.pop_back();
+                index--;
+            }
+            myvector.push_back(letterL);
+
+            for (i=0; i<index; i++) {
+                gui.push(&myvector[i]);
+            }
+
+            myvector[index].scale(0.01 / myvector[0].bbox().diag());
+
+            //ctrl v - posizione camera
+            gui.camera.deserialize(glfwGetClipboardString(gui.window));
+            glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
+            gui.update_GL_matrices();
+
+            gui.pop(&myvector[index]);
+            myvector[i].updateGL();
+            flag = false;
+        }
+        ImGui::SameLine();
+        if(ImGui::Button("I")) {
+
+            //ctrl c - posizione camera
+            glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
+            ++index;
+            current_size =  0.1 / myvector[0].bbox().diag();
+
+            for (i=0; i<index; i++) {
+                gui.pop(&myvector[i]);
+            }
+
+            if (!flag ) {
+                myvector.pop_back();
+                index--;
+            }
+            myvector.push_back(letterI);
+
+            for (i=0; i<index; i++) {
+                gui.push(&myvector[i]);
+            }
+
+            myvector[index].scale(0.01 / myvector[0].bbox().diag());
+
+            //ctrl v - posizione camera
+            gui.camera.deserialize(glfwGetClipboardString(gui.window));
+            glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
+            gui.update_GL_matrices();
+
+            gui.pop(&myvector[index]);
+            myvector[i].updateGL();
+            flag = false;
+        }
+        ImGui::SameLine();
+        if(ImGui::Button("S")) {
+
+            //ctrl c - posizione camera
+            glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
+            ++index;
+            current_size =  0.1 / myvector[0].bbox().diag();
+
+            for (i=0; i<index; i++) {
+                gui.pop(&myvector[i]);
+            }
+
+            if (!flag ) {
+                myvector.pop_back();
+                index--;
+            }
+            myvector.push_back(letterS);
+
+            for (i=0; i<index; i++) {
+                gui.push(&myvector[i]);
+            }
+
+            myvector[index].scale(0.01 / myvector[0].bbox().diag());
+
+            //ctrl v - posizione camera
+            gui.camera.deserialize(glfwGetClipboardString(gui.window));
+            glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
+            gui.update_GL_matrices();
+
+            gui.pop(&myvector[index]);
+            myvector[i].updateGL();
+            flag = false;
+        }
+        ImGui::SameLine();
+        if(ImGui::Button("A")) {
+
+            //ctrl c - posizione camera
+            glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
+            ++index;
+            current_size =  0.01 / myvector[0].bbox().diag();
+
+            for (i=0; i<index; i++) {
+                gui.pop(&myvector[i]);
+            }
+
+            if (!flag ) {
+                myvector.pop_back();
+                index--;
+            }
+            myvector.push_back(letterA);
+
+            for (i=0; i<index; i++) {
+                gui.push(&myvector[i]);
+            }
+
+            myvector[index].scale(0.01 / myvector[0].bbox().diag());
 
             //ctrl v - posizione camera
             gui.camera.deserialize(glfwGetClipboardString(gui.window));
@@ -104,9 +243,10 @@ int main(int argc, char **argv)
             flag = false;
         }
 
-        if(ImGui::Button("sfera")) {
+        ImGui::Text( "");
+        ImGui::Text("> shapes");
 
-
+        if(ImGui::Button("sphere")) {
 
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
             ++index;
@@ -120,13 +260,106 @@ int main(int argc, char **argv)
                 index--;
             }
 
-            myvector.push_back(m3);
+            myvector.push_back(sphere);
 
             for (i=0; i<index; i++) {
                 gui.push(&myvector[i]);
             }
 
             myvector[index].scale(0.1 / myvector[0].bbox().diag());
+
+            gui.camera.deserialize(glfwGetClipboardString(gui.window));
+            glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
+            gui.update_GL_matrices();
+
+            gui.pop(&myvector[index]);
+            myvector[index].updateGL();
+            flag = false;
+        }
+
+        if(ImGui::Button("heart")) {
+
+            glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
+            ++index;
+            current_size =  0.01 / myvector[0].bbox().diag();
+
+            for (i=0; i<index; i++) {
+                gui.pop(&myvector[i]);
+            }
+            if (!flag ) {
+                myvector.pop_back();
+                index--;
+            }
+
+            myvector.push_back(heart);
+
+            for (i=0; i<index; i++) {
+                gui.push(&myvector[i]);
+            }
+
+            myvector[index].scale(0.01 / myvector[0].bbox().diag());
+
+            gui.camera.deserialize(glfwGetClipboardString(gui.window));
+            glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
+            gui.update_GL_matrices();
+
+            gui.pop(&myvector[index]);
+            myvector[index].updateGL();
+            flag = false;
+        }
+
+        if(ImGui::Button("star")) {
+
+            glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
+            ++index;
+            current_size =  0.01 / myvector[0].bbox().diag();
+
+            for (i=0; i<index; i++) {
+                gui.pop(&myvector[i]);
+            }
+            if (!flag ) {
+                myvector.pop_back();
+                index--;
+            }
+
+            myvector.push_back(star);
+
+            for (i=0; i<index; i++) {
+                gui.push(&myvector[i]);
+            }
+
+            myvector[index].scale(0.01 / myvector[0].bbox().diag());
+
+            gui.camera.deserialize(glfwGetClipboardString(gui.window));
+            glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
+            gui.update_GL_matrices();
+
+            gui.pop(&myvector[index]);
+            myvector[index].updateGL();
+            flag = false;
+        }
+
+        if(ImGui::Button("triangle")) {
+
+            glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
+            ++index;
+            current_size =  0.01/ myvector[0].bbox().diag();
+
+            for (i=0; i<index; i++) {
+                gui.pop(&myvector[i]);
+            }
+            if (!flag ) {
+                myvector.pop_back();
+                index--;
+            }
+
+            myvector.push_back(triangle);
+
+            for (i=0; i<index; i++) {
+                gui.push(&myvector[i]);
+            }
+
+            myvector[index].scale(0.01 / myvector[0].bbox().diag());
 
             gui.camera.deserialize(glfwGetClipboardString(gui.window));
             glfwSetWindowSize(gui.window, gui.camera.width, gui.camera.height);
@@ -159,7 +392,6 @@ int main(int argc, char **argv)
 
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
 
-
             for (i=0; i<=index; i++) {
                 gui.pop(&myvector[i]);
             }
@@ -180,7 +412,6 @@ int main(int argc, char **argv)
             flag = true;
         }
 
-
         if(ImGui::Button("union")) {
 
             in_coords.clear();
@@ -200,7 +431,6 @@ int main(int argc, char **argv)
             mresult = DrawableTrimesh(bool_coords, bool_tris);
 
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
-
 
             //svuotamento gui -> il vector da problemi se ci sono mesh nella gui
             for (i=0; i<=index; i++) {
@@ -234,9 +464,51 @@ int main(int argc, char **argv)
             myvector[index].updateGL();
         }
 
+
+        ///Rotate
+        //La scalatura si riferisce sempre all'ultima mesh aggiunta
+        ImGui::Text("");
+        ImGui::Text("ROTATION ANGLE");
+
+        ImGui::Text("X axis");
+        if(ImGui::Button("^")){
+            myvector[index].rotate(vec3d(1, 0, 0), 50);
+            myvector[index].updateGL();
+        }
+        ImGui::SameLine();
+        if(ImGui::Button("v")){
+            myvector[index].rotate(vec3d(1,0 , 0), -50);
+            myvector[index].updateGL();
+        }
+
+        ImGui::Text("Y axis");
+        if(ImGui::Button("<")){
+            myvector[index].rotate(vec3d(0, 1, 0), 50);
+            myvector[index].updateGL();
+        }
+        ImGui::SameLine();
+        if(ImGui::Button(">")){
+            myvector[index].rotate(vec3d(0, 1, 0), -50);
+            myvector[index].updateGL();
+        }
+
+        ImGui::Text("Z axis");
+        if(ImGui::Button("d")){
+            myvector[index].rotate(vec3d(0, 0, 1), 50);
+            myvector[index].updateGL();
+        }
+        ImGui::SameLine();
+        if(ImGui::Button("s")){
+            myvector[index].rotate(vec3d(0, 0, 1), -50);
+            myvector[index].updateGL();
+            std::cout << "ID " << i << std::endl; //stampa l'id del vertice ottenuto nella console
+        }
+
+
         ///Reset
         if(ImGui::SmallButton("Reset"))
         {
+
 
             for (i=0; i <= index; i++) {
                 gui.pop(&myvector[i]);
@@ -253,6 +525,7 @@ int main(int argc, char **argv)
             myvector[0].updateGL();
             index = 0;
             flag = true;
+
         }
     };
 
