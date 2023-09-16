@@ -15,7 +15,6 @@ inline void loadMultipleMesh(std::vector<cinolib::DrawableTrimesh<>> &mesh, int 
 
 int main(int argc, char **argv)
 {
-    int i;
 
     using namespace cinolib;
 
@@ -35,21 +34,16 @@ int main(int argc, char **argv)
     DrawableTrimesh<> heart("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/shapes/heart.obj");
     DrawableTrimesh<> star("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/shapes/star.obj");
     DrawableTrimesh<> triangle ("/Users/elisa/Desktop/Tirocinio/booleans_demo/data/shapes/triangle.obj");
-    std::vector<DrawableTrimesh<>> myvector;
 
-    bool flag= true;
-
-    const char* camera; //stringa che contiene le informazioni della camera
-
-    myvector.push_back(m); //carica il coniglio
-
+    int i;
     int index = 0;
+    bool flag= true;
+    GLcanvas gui;
 
     DrawableTrimesh<> m1;
-
     DrawableTrimesh<> mresult;
-
-    GLcanvas gui;
+    std::vector<DrawableTrimesh<>> myvector;
+    myvector.push_back(m); //carica il coniglio
 
     float current_size = 0.1 / m.bbox().diag();
     float current_angle = 0 ;
@@ -69,12 +63,13 @@ int main(int argc, char **argv)
     std::vector<std::bitset<NBIT>> bool_labels;
 
     //opzioni che mi permettono di salvare etc.
-
-
+    SurfaceMeshControls<DrawableTrimesh<>> mesh_controls(&mresult, &gui, "mesh.obj");
+    gui.push(&mesh_controls);
 
     gui.callback_app_controls = [&]()
     {
 
+        ///Stencils
         ImGui::Text("");
         ImGui::Text("STENCILS");
         ImGui::Text("> letters");
@@ -83,7 +78,7 @@ int main(int argc, char **argv)
             //ctrl c - posizione camera
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
             ++index;
-            current_size =  0.1 / myvector[0].bbox().diag();
+            current_size =  float(0.1 / myvector[0].bbox().diag());
 
             for (i=0; i<index; i++) {
                 gui.pop(&myvector[i]);
@@ -116,7 +111,7 @@ int main(int argc, char **argv)
             //ctrl c - posizione camera
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
             ++index;
-            current_size =  0.1 / myvector[0].bbox().diag();
+            current_size =  float(0.1 / myvector[0].bbox().diag());
 
             for (i=0; i<index; i++) {
                 gui.pop(&myvector[i]);
@@ -149,7 +144,7 @@ int main(int argc, char **argv)
             //ctrl c - posizione camera
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
             ++index;
-            current_size =  0.1 / myvector[0].bbox().diag();
+            current_size =  float(0.1 / myvector[0].bbox().diag());
 
             for (i=0; i<index; i++) {
                 gui.pop(&myvector[i]);
@@ -182,7 +177,7 @@ int main(int argc, char **argv)
             //ctrl c - posizione camera
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
             ++index;
-            current_size =  0.1 / myvector[0].bbox().diag();
+            current_size =  float(0.1 / myvector[0].bbox().diag());
 
             for (i=0; i<index; i++) {
                 gui.pop(&myvector[i]);
@@ -281,7 +276,7 @@ int main(int argc, char **argv)
 
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
             ++index;
-            current_size =  0.01 / myvector[0].bbox().diag();
+            current_size =  float(0.1 / myvector[0].bbox().diag());
 
             for (i=0; i<index; i++) {
                 gui.pop(&myvector[i]);
@@ -312,7 +307,7 @@ int main(int argc, char **argv)
 
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
             ++index;
-            current_size =  0.01 / myvector[0].bbox().diag();
+            current_size =  float(0.1 / myvector[0].bbox().diag());
 
             for (i=0; i<index; i++) {
                 gui.pop(&myvector[i]);
@@ -343,7 +338,7 @@ int main(int argc, char **argv)
 
             glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
             ++index;
-            current_size =  0.01/ myvector[0].bbox().diag();
+            current_size =  float(0.1 / myvector[0].bbox().diag());
 
             for (i=0; i<index; i++) {
                 gui.pop(&myvector[i]);
@@ -370,6 +365,7 @@ int main(int argc, char **argv)
             flag = false;
         }
 
+        ///Boolean Operations
         ImGui::Text("");
         ImGui::Text("BOOLEAN OPERATIONS");
         if(ImGui::Button("subtraction")) {
@@ -407,7 +403,6 @@ int main(int argc, char **argv)
             gui.update_GL_matrices();
 
             myvector[0].updateGL();
-
             index = 0;
             flag = true;
         }
@@ -458,15 +453,14 @@ int main(int argc, char **argv)
         //La scalatura si riferisce sempre all'ultima mesh aggiunta
         ImGui::Text("");
         ImGui::Text("STENCIL SCALE");
-        if(ImGui::SliderFloat("##size", &current_size, myvector[0].bbox().diag()*0.01, myvector[0].bbox().diag())&& index > 0){
-
+        if(ImGui::SliderFloat("##size", &current_size, float(myvector[0].bbox().diag()*0.01), float(myvector[0].bbox().diag())) && index > 0){
             myvector[index].scale( current_size / myvector[index].bbox().diag());
             myvector[index].updateGL();
         }
 
 
         ///Rotate
-        //La scalatura si riferisce sempre all'ultima mesh aggiunta
+        //La rotazione si riferisce sempre all'ultima mesh aggiunta
         ImGui::Text("");
         ImGui::Text("ROTATION ANGLE");
 
@@ -493,22 +487,20 @@ int main(int argc, char **argv)
         }
 
         ImGui::Text("Z axis");
-        if(ImGui::Button("d")){
+        if(ImGui::Button("RH")){
             myvector[index].rotate(vec3d(0, 0, 1), 50);
             myvector[index].updateGL();
         }
         ImGui::SameLine();
-        if(ImGui::Button("s")){
+        if(ImGui::Button("LH")){
             myvector[index].rotate(vec3d(0, 0, 1), -50);
             myvector[index].updateGL();
-            std::cout << "ID " << i << std::endl; //stampa l'id del vertice ottenuto nella console
-        }
 
+        }
 
         ///Reset
         if(ImGui::SmallButton("Reset"))
         {
-
 
             for (i=0; i <= index; i++) {
                 gui.pop(&myvector[i]);
