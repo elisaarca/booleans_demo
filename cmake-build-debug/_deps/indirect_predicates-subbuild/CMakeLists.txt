@@ -13,9 +13,9 @@ project(indirect_predicates-populate NONE)
 # Pass through things we've already detected in the main project to avoid
 # paying the cost of redetecting them again in ExternalProject_Add()
 set(GIT_EXECUTABLE [==[/usr/bin/git]==])
-set(GIT_VERSION_STRING [==[2.39.2 (Apple Git-143)]==])
+set(GIT_VERSION_STRING [==[2.39.3 (Apple Git-145)]==])
 set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
-  [==[/usr/bin/git;2.39.2 (Apple Git-143)]==]
+  [==[/usr/bin/git;2.39.3 (Apple Git-145)]==]
 )
 
 

@@ -596,4 +596,3 @@ inline void loadMultipleMesh(std::vector<cinolib::DrawableTrimesh<>> &mesh, int 
 
 
 
-
