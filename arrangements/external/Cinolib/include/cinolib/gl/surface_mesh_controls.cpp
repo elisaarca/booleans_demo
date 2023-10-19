@@ -95,6 +95,8 @@ void SurfaceMeshControls<Mesh>::header_IO(const bool open)
             {
                 *m = Mesh(filename.c_str());
                 gui->refit_scene();
+                //stampa valore di tmp
+                std::cout << "m load: " << m << std::endl;
             }
         }
         ImGui::SameLine();
@@ -104,6 +106,8 @@ void SurfaceMeshControls<Mesh>::header_IO(const bool open)
             if(!filename.empty())
             {
                 m->save(filename.c_str());
+                //stampa valore di tmp
+                std::cout << "m save: " << m << std::endl;
             }
         }
         ImGui::TreePop();
