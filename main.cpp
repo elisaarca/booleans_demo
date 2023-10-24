@@ -12,7 +12,7 @@
 
 
 inline void loadMultipleMesh(std::vector<cinolib::DrawableTrimesh<>> &mesh, int dim, std::vector<double> &coords, std::vector<uint> &tris, std::vector<uint> &labels);
-void insertStencil(std::vector<cinolib::DrawableTrimesh<>> &myvector, int& index, float& current_size, bool &flag, cinolib::DrawableTrimesh<> &stencil, cinolib::GLcanvas &gui, float scale_factor);
+void insertStencil(std::vector<cinolib::DrawableTrimesh<>> &myvector, int& index, float& current_size, bool &flag, cinolib::DrawableTrimesh<> &stencil, cinolib::GLcanvas &gui);
 int main(int argc, char **argv)
 {
 
@@ -103,6 +103,9 @@ int main(int argc, char **argv)
                 gui.refit_scene();
                 //stampa valore di tmp
                 gui.push(&myvector[0]);
+                min = myvector[0].bbox().diag()*0.01;
+                current_size = float(myvector[0].bbox().diag()*0.1);
+                max = myvector[0].bbox().diag();
             }
         }
 
@@ -127,107 +130,107 @@ int main(int argc, char **argv)
         ImGui::Text("> letters");
         {
             if (ImGui::Button("A")) {
-                insertStencil(myvector, index, current_size, flag, letterA, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterA, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("B")) {
-                insertStencil(myvector, index, current_size, flag, letterB, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterB, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("C")) {
-                insertStencil(myvector, index, current_size, flag, letterC, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterC, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("D")) {
-                insertStencil(myvector, index, current_size, flag, letterD, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterD, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("E")) {
-                insertStencil(myvector, index, current_size, flag, letterE, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterE, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("F")) {
-                insertStencil(myvector, index, current_size, flag, letterF, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterF, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("G")) {
-                insertStencil(myvector, index, current_size, flag, letterG, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterG, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("H")) {
-                insertStencil(myvector, index, current_size, flag, letterH, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterH, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("I")) {
-                insertStencil(myvector, index, current_size, flag, letterI, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterI, gui);
             }
             ///
             if (ImGui::Button("J")) {
-                insertStencil(myvector, index, current_size, flag, letterJ, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterJ, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("K")) {
-                insertStencil(myvector, index, current_size, flag, letterK, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterK, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("L")) {
-                insertStencil(myvector, index, current_size, flag, letterL, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterL, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("M")) {
-                insertStencil(myvector, index, current_size, flag, letterM, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterM, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("N")) {
-                insertStencil(myvector, index, current_size, flag, letterN, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterN, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("O")) {
-                insertStencil(myvector, index, current_size, flag, letterO, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterO, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("P")) {
-                insertStencil(myvector, index, current_size, flag, letterP, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterP, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("Q")) {
-                insertStencil(myvector, index, current_size, flag, letterQ, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterQ, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("R")) {
-                insertStencil(myvector, index, current_size, flag, letterR, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterR, gui);
             }
             ///
             if (ImGui::Button("S")) {
-                insertStencil(myvector, index, current_size, flag, letterS, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterS, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("T")) {
-                insertStencil(myvector, index, current_size, flag, letterT, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterT, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("U")) {
-                insertStencil(myvector, index, current_size, flag, letterU, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterU, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("V")) {
-                insertStencil(myvector, index, current_size, flag, letterV, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterV, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("W")) {
-                insertStencil(myvector, index, current_size, flag, letterW, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterW, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("X")) {
-                insertStencil(myvector, index, current_size, flag, letterX, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterX, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("Y")) {
-                insertStencil(myvector, index, current_size, flag, letterY, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterY, gui);
             }
             ImGui::SameLine();
             if (ImGui::Button("Z")) {
-                insertStencil(myvector, index, current_size, flag, letterZ, gui,0.01);
+                insertStencil(myvector, index, current_size, flag, letterZ, gui);
             }
 
         }
@@ -236,19 +239,19 @@ int main(int argc, char **argv)
         ImGui::Text("> shapes");
         {
                 if (ImGui::Button("sphere")) {
-                    insertStencil(myvector, index, current_size, flag, sphere, gui,0.1);
+                    insertStencil(myvector, index, current_size, flag, sphere, gui);
                 }
                 if (ImGui::Button("cube")) {
-                    insertStencil(myvector, index, current_size, flag, cube, gui,0.01);
+                    insertStencil(myvector, index, current_size, flag, cube, gui);
                 }
                 if (ImGui::Button("heart")) {
-                    insertStencil(myvector, index, current_size, flag, heart, gui,0.01);
+                    insertStencil(myvector, index, current_size, flag, heart, gui);
                 }
                 if (ImGui::Button("star")) {
-                    insertStencil(myvector, index, current_size, flag, star, gui,0.01);
+                    insertStencil(myvector, index, current_size, flag, star, gui);
                 }
                 if (ImGui::Button("triangle")) {
-                    insertStencil(myvector, index, current_size, flag, triangle, gui,0.01);
+                    insertStencil(myvector, index, current_size, flag, triangle, gui);
                 }
             }
 
@@ -259,8 +262,6 @@ int main(int argc, char **argv)
         if(ImGui::SliderFloat("##size", &current_size,min , max) && index > 0){
             myvector[index].scale( current_size / myvector[index].bbox().diag());
             myvector[index].updateGL();
-
-            //current_size = float(myvector[0].bbox().diag()*0.01);
         }
 
 
@@ -453,7 +454,7 @@ inline void loadMultipleMesh(std::vector<cinolib::DrawableTrimesh<>> &mesh, int 
     }
 }
 
-void insertStencil(std::vector<cinolib::DrawableTrimesh<>> &myvector, int& index, float& current_size, bool &flag, cinolib::DrawableTrimesh<> &stencil, cinolib::GLcanvas &gui, float scale_factor) {
+void insertStencil(std::vector<cinolib::DrawableTrimesh<>> &myvector, int& index, float& current_size, bool &flag, cinolib::DrawableTrimesh<> &stencil, cinolib::GLcanvas &gui) {
     int i;
 //ctrl c - posizione camera
         glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
@@ -473,8 +474,10 @@ void insertStencil(std::vector<cinolib::DrawableTrimesh<>> &myvector, int& index
         for (i = 0; i<index; i++) {
             gui.push(&myvector[i]);
         }
+        myvector[index].scale( float(myvector[0].bbox().diag()*0.1) / myvector[index].bbox().diag());
+        myvector[index].updateGL();
 
-        myvector[index].scale(scale_factor / myvector[0].bbox().diag());
+
 
 //ctrl v - posizione camera
         gui.camera.deserialize(glfwGetClipboardString(gui.window));
