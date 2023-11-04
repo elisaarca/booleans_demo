@@ -139,7 +139,7 @@ CMAKE_INSTALL_LOCALSTATEDIR:PATH=var
 CMAKE_INSTALL_MANDIR:PATH=
 
 //Path to a program.
-CMAKE_INSTALL_NAME_TOOL:FILEPATH=/usr/bin/install_name_tool
+CMAKE_INSTALL_NAME_TOOL:FILEPATH=/Users/elisa/anaconda3/bin/install_name_tool
 
 //C header files for non-gcc (/usr/include)
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
@@ -203,7 +203,7 @@ CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 
 //The product will be built against the headers and libraries located
 // inside the indicated SDK.
-CMAKE_OSX_SYSROOT:PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+CMAKE_OSX_SYSROOT:PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
 
 //Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
@@ -360,13 +360,13 @@ GLFW_USE_OSMESA:BOOL=OFF
 GLFW_VULKAN_STATIC:BOOL=OFF
 
 //Include for OpenGL on OS X
-OPENGL_INCLUDE_DIR:PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework
+OPENGL_INCLUDE_DIR:PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/OpenGL.framework
 
 //OpenGL library for OS X
-OPENGL_gl_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework
+OPENGL_gl_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/OpenGL.framework
 
 //GLU library for OS X (usually same as OpenGL library)
-OPENGL_glu_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework
+OPENGL_glu_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/OpenGL.framework
 
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=
@@ -458,15 +458,6 @@ indirectPredicates_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 indirectPredicates_SOURCE_DIR:STATIC=/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src
-
-//Value Computed by CMake
-mesh_booleans_BINARY_DIR:STATIC=/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug
-
-//Value Computed by CMake
-mesh_booleans_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-mesh_booleans_SOURCE_DIR:STATIC=/Users/elisa/Desktop/Tirocinio/booleans_demo
 
 //Dependencies for the target
 tbbmalloc_proxy_LIB_DEPENDS:STATIC=general;TBB::tbbmalloc;
@@ -654,7 +645,7 @@ CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CPACK_SOURCE_ZIP
 CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 //Details about finding OpenGL
-FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework][/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework][c ][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/OpenGL.framework][/Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/OpenGL.framework][c ][v()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: GIT_EXECUTABLE

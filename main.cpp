@@ -15,7 +15,6 @@ inline void loadMultipleMesh(std::vector<cinolib::DrawableTrimesh<>> &mesh, int 
 void insertStencil(std::vector<cinolib::DrawableTrimesh<>> &myvector, int& index, float& current_size, bool &flag, cinolib::DrawableTrimesh<> &stencil, cinolib::GLcanvas &gui);
 int main(int argc, char **argv)
 {
-
     using namespace cinolib;
 
     ///Mesh
@@ -88,6 +87,8 @@ int main(int argc, char **argv)
 
     gui.callback_app_controls = [&]()
     {
+        ImGui::Text("");
+        ImGui::Text("OPTIONS");
 
         if (ImGui::Button("Load")) {
 
@@ -98,7 +99,7 @@ int main(int argc, char **argv)
                     gui.pop(&myvector[i]);
                 }
                 myvector.clear();
-                myvector.reserve(30);
+                myvector.reserve(100); //era 30
                 myvector.emplace_back(filename.c_str());
                 gui.refit_scene();
                 //stampa valore di tmp
@@ -106,6 +107,8 @@ int main(int argc, char **argv)
                 min = myvector[0].bbox().diag()*0.01;
                 current_size = float(myvector[0].bbox().diag()*0.1);
                 max = myvector[0].bbox().diag();
+                myvector[0].updateGL();
+                index = 0;
             }
         }
 
@@ -126,7 +129,7 @@ int main(int argc, char **argv)
 
         ///Stencils
         ImGui::Text("");
-        ImGui::Text("STENCILS");
+        ImGui::Text("STENCIL BUTTONS");
         ImGui::Text("> letters");
         {
             if (ImGui::Button("A")) {
@@ -459,7 +462,7 @@ void insertStencil(std::vector<cinolib::DrawableTrimesh<>> &myvector, int& index
 //ctrl c - posizione camera
         glfwSetClipboardString(gui.window, gui.camera.serialize().c_str());
         ++index;
-        current_size = float(0.1 / myvector[0].bbox().diag());
+        current_size = float(myvector[0].bbox().diag())*0.1;
 
         for (i = 0; i<index; i++) {
             gui.pop(&myvector[i]);

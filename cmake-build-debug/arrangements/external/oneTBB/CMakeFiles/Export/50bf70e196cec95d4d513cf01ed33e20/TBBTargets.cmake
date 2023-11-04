@@ -19,7 +19,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_cmake_targets_defined "")
 set(_cmake_targets_not_defined "")
 set(_cmake_expected_targets "")
-foreach(_cmake_expected_target IN ITEMS TBB::tbb TBB::tbbmalloc)
+foreach(_cmake_expected_target IN ITEMS TBB::tbb TBB::tbbmalloc TBB::tbbmalloc_proxy)
   list(APPEND _cmake_expected_targets "${_cmake_expected_target}")
   if(TARGET "${_cmake_expected_target}")
     list(APPEND _cmake_targets_defined "${_cmake_expected_target}")
@@ -56,26 +56,28 @@ if(_IMPORT_PREFIX STREQUAL "/")
 endif()
 
 # Create imported target TBB::tbb
-add_library(TBB::tbb STATIC IMPORTED)
+add_library(TBB::tbb SHARED IMPORTED)
 
 set_target_properties(TBB::tbb PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "\$<\$<CONFIG:DEBUG>:TBB_USE_DEBUG>"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-  INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:Threads::Threads>"
 )
 
 # Create imported target TBB::tbbmalloc
-add_library(TBB::tbbmalloc STATIC IMPORTED)
+add_library(TBB::tbbmalloc SHARED IMPORTED)
 
 set_target_properties(TBB::tbbmalloc PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "\$<\$<CONFIG:DEBUG>:TBB_USE_DEBUG>"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-  INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:Threads::Threads>"
 )
 
-if(CMAKE_VERSION VERSION_LESS 2.8.12)
-  message(FATAL_ERROR "This file relies on consumers using CMake 2.8.12 or greater.")
-endif()
+# Create imported target TBB::tbbmalloc_proxy
+add_library(TBB::tbbmalloc_proxy SHARED IMPORTED)
+
+set_target_properties(TBB::tbbmalloc_proxy PROPERTIES
+  INTERFACE_COMPILE_DEFINITIONS "\$<\$<CONFIG:DEBUG>:TBB_USE_DEBUG>"
+  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
+)
 
 # Load information for each installed configuration.
 file(GLOB _cmake_config_files "${CMAKE_CURRENT_LIST_DIR}/TBBTargets-*.cmake")
