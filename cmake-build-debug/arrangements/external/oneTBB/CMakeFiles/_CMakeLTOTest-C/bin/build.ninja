@@ -46,7 +46,7 @@ build cmake_object_order_depends_target_foo: phony || CMakeFiles/foo.dir
 
 build CMakeFiles/foo.dir/foo.c.o: C_COMPILER__foo_ /Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/arrangements/external/oneTBB/CMakeFiles/_CMakeLTOTest-C/src/foo.c || cmake_object_order_depends_target_foo
   DEP_FILE = CMakeFiles/foo.dir/foo.c.o.d
-  FLAGS = -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  FLAGS = -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/foo.dir
   OBJECT_FILE_DIR = CMakeFiles/foo.dir
 
@@ -59,7 +59,7 @@ build CMakeFiles/foo.dir/foo.c.o: C_COMPILER__foo_ /Users/elisa/Desktop/Tirocini
 # Link the static library libfoo.a
 
 build libfoo.a: C_STATIC_LIBRARY_LINKER__foo_ CMakeFiles/foo.dir/foo.c.o
-  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   LANGUAGE_COMPILE_FLAGS = -flto=thin
   OBJECT_DIR = CMakeFiles/foo.dir
   POST_BUILD = :
@@ -78,7 +78,7 @@ build cmake_object_order_depends_target_boo: phony || cmake_object_order_depends
 
 build CMakeFiles/boo.dir/main.c.o: C_COMPILER__boo_ /Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/arrangements/external/oneTBB/CMakeFiles/_CMakeLTOTest-C/src/main.c || cmake_object_order_depends_target_boo
   DEP_FILE = CMakeFiles/boo.dir/main.c.o.d
-  FLAGS = -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  FLAGS = -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/boo.dir
   OBJECT_FILE_DIR = CMakeFiles/boo.dir
 
@@ -91,7 +91,7 @@ build CMakeFiles/boo.dir/main.c.o: C_COMPILER__boo_ /Users/elisa/Desktop/Tirocin
 # Link the executable boo
 
 build boo: C_EXECUTABLE_LINKER__boo_ CMakeFiles/boo.dir/main.c.o | libfoo.a || libfoo.a
-  FLAGS = -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+  FLAGS = -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   LINK_LIBRARIES = libfoo.a
   OBJECT_DIR = CMakeFiles/boo.dir
   POST_BUILD = :

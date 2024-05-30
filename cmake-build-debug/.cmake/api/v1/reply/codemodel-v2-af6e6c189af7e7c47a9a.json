@@ -1,0 +1,336 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						6,
+						9,
+						10
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "arrangements/external/oneTBB",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-arrangements.external.oneTBB-Debug-9d62ab1de40eb7498e37.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "arrangements/external/oneTBB"
+				},
+				{
+					"build" : "arrangements/external/oneTBB/src/tbb",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-arrangements.external.oneTBB.src.tbb-Debug-7b921349dc13fe0f8e8f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "arrangements/external/oneTBB/src/tbb",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "arrangements/external/oneTBB/src/tbbmalloc",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-arrangements.external.oneTBB.src.tbbmalloc-Debug-b1062fc4725c8d509ce7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "arrangements/external/oneTBB/src/tbbmalloc",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "arrangements/external/oneTBB/src/tbbmalloc_proxy",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-arrangements.external.oneTBB.src.tbbmalloc_proxy-Debug-8a39f3a3203dbbc93c95.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "arrangements/external/oneTBB/src/tbbmalloc_proxy",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "arrangements/external/oneTBB/cmake/post_install",
+					"jsonFile" : "directory-arrangements.external.oneTBB.cmake.post_install-Debug-ebcb3930faf08a3f7b13.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "arrangements/external/oneTBB/cmake/post_install"
+				},
+				{
+					"build" : "imgui",
+					"childIndexes" : 
+					[
+						7
+					],
+					"jsonFile" : "directory-imgui-Debug-33b2769a95e269fde4ff.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "arrangements/external/Cinolib/external/imgui",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "imgui/glfw",
+					"childIndexes" : 
+					[
+						8
+					],
+					"jsonFile" : "directory-imgui.glfw-Debug-fc9f2b62e1121db68864.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 2,
+					"source" : "arrangements/external/Cinolib/external/imgui/glfw"
+				},
+				{
+					"build" : "imgui/glfw/src",
+					"jsonFile" : "directory-imgui.glfw.src-Debug-aac77f91d781818ed56a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 7,
+					"projectIndex" : 2,
+					"source" : "arrangements/external/Cinolib/external/imgui/glfw/src",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "shewchuk_predicates",
+					"jsonFile" : "directory-shewchuk_predicates-Debug-6512ba9a19cb284fc015.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "arrangements/external/Cinolib/external/shewchuk_predicates",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "_deps/indirect_predicates-build",
+					"jsonFile" : "directory-_deps.indirect_predicates-build-Debug-c2e677c657d8d0dd074d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "cmake-build-debug/_deps/indirect_predicates-src",
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						6,
+						9
+					],
+					"name" : "booleans_demo",
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "TBB",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6,
+						7,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7,
+						8
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						10
+					],
+					"name" : "indirectPredicates",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "booleans_demo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booleans_demo-Debug-b7ea3c5eec2fe296b1df.json",
+					"name" : "booleans_demo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "glfw::@2fb04e988a43665c8296",
+					"jsonFile" : "target-glfw-Debug-da57af2c4a2d468ed79a.json",
+					"name" : "glfw",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "imgui::@45ca6dacf63e9879b888",
+					"jsonFile" : "target-imgui-Debug-4f784d96d5a369b816f7.json",
+					"name" : "imgui",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "indirectPredicates::@0c2072562c8111427af4",
+					"jsonFile" : "target-indirectPredicates-Debug-208a7f4742e1a8cb5a42.json",
+					"name" : "indirectPredicates",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "indirectPredicates_test::@0c2072562c8111427af4",
+					"jsonFile" : "target-indirectPredicates_test-Debug-10f3c0bb0eb9ef33b77a.json",
+					"name" : "indirectPredicates_test",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "shewchuk_predicates::@d0b0aee035d36b842636",
+					"jsonFile" : "target-shewchuk_predicates-Debug-abb6f810336ae6858e70.json",
+					"name" : "shewchuk_predicates",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "tbb::@4e762e095b2935139927",
+					"jsonFile" : "target-tbb-Debug-f051623f20f6c8b9e716.json",
+					"name" : "tbb",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "tbbmalloc::@5634186ffc971debe633",
+					"jsonFile" : "target-tbbmalloc-Debug-49309a9cdcd3d98f7b04.json",
+					"name" : "tbbmalloc",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "tbbmalloc_proxy::@49795deaa7100a19c7a7",
+					"jsonFile" : "target-tbbmalloc_proxy-Debug-a7eacb3fb35e0ed9391b.json",
+					"name" : "tbbmalloc_proxy",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug",
+		"source" : "/Users/elisa/Desktop/Tirocinio/booleans_demo"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

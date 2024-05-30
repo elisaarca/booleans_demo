@@ -1,4 +1,4 @@
-
+// Created by Elisa Silva on 10/07/2021.
 #ifdef _MSC_VER // Workaround for known bugs and issues on MSVC
 #define _HAS_STD_BYTE 0  // https://developercommunity.visualstudio.com/t/error-c2872-byte-ambiguous-symbol/93889
 #define NOMINMAX // https://stackoverflow.com/questions/1825904/error-c2589-on-stdnumeric-limitsdoublemin

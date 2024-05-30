@@ -52,8 +52,8 @@ build cmake_object_order_depends_target_booleans_demo: phony || cmake_object_ord
 build CMakeFiles/booleans_demo.dir/main.cpp.o: CXX_COMPILER__booleans_demo_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/main.cpp || cmake_object_order_depends_target_booleans_demo
   DEFINES = -DCINOLIB_USES_INDIRECT_PREDICATES -DCINOLIB_USES_OPENGL_GLFW_IMGUI -DCINOLIB_USES_SHEWCHUK_PREDICATES -DGL_SILENCE_DEPRECATION -DTBB_PARALLEL=1 -DTBB_USE_DEBUG
   DEP_FILE = CMakeFiles/booleans_demo.dir/main.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
-  INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/. -I/Users/elisa/Desktop/Tirocinio/booleans_demo/code -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/code -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/abseil-cpp -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/eigen -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/. -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/System/Library/Frameworks
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/. -I/Users/elisa/Desktop/Tirocinio/booleans_demo/code -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/code -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/abseil-cpp -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/eigen -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/. -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/System/Library/Frameworks
   OBJECT_DIR = CMakeFiles/booleans_demo.dir
   OBJECT_FILE_DIR = CMakeFiles/booleans_demo.dir
   TARGET_COMPILE_PDB = CMakeFiles/booleans_demo.dir/
@@ -67,9 +67,9 @@ build CMakeFiles/booleans_demo.dir/main.cpp.o: CXX_COMPILER__booleans_demo_Debug
 #############################################
 # Link the executable booleans_demo
 
-build booleans_demo: CXX_EXECUTABLE_LINKER__booleans_demo_Debug CMakeFiles/booleans_demo.dir/main.cpp.o | appleclang_15.0_cxx17_64_debug/libtbb_debug.12.7.dylib /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd imgui/libimgui.a imgui/glfw/src/libglfw3.a shewchuk_predicates/libshewchuk_predicates.a _deps/indirect_predicates-build/libindirectPredicates.a || _deps/indirect_predicates-build/libindirectPredicates.a appleclang_15.0_cxx17_64_debug/libtbb_debug.dylib imgui/glfw/src/libglfw3.a imgui/libimgui.a shewchuk_predicates/libshewchuk_predicates.a appleclang_15.0_cxx17_64_debug/libtbb_debug.dylib
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
-  LINK_LIBRARIES = -Wl,-rpath,/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/appleclang_15.0_cxx17_64_debug  appleclang_15.0_cxx17_64_debug/libtbb_debug.12.7.dylib  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd  imgui/libimgui.a  imgui/glfw/src/libglfw3.a  -framework Cocoa  -framework IOKit  -framework CoreFoundation  shewchuk_predicates/libshewchuk_predicates.a  _deps/indirect_predicates-build/libindirectPredicates.a
+build booleans_demo: CXX_EXECUTABLE_LINKER__booleans_demo_Debug CMakeFiles/booleans_demo.dir/main.cpp.o | appleclang_15.0_cxx17_64_debug/libtbb_debug.12.7.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd imgui/libimgui.a imgui/glfw/src/libglfw3.a shewchuk_predicates/libshewchuk_predicates.a _deps/indirect_predicates-build/libindirectPredicates.a || _deps/indirect_predicates-build/libindirectPredicates.a appleclang_15.0_cxx17_64_debug/libtbb_debug.dylib imgui/glfw/src/libglfw3.a imgui/libimgui.a shewchuk_predicates/libshewchuk_predicates.a appleclang_15.0_cxx17_64_debug/libtbb_debug.dylib
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/appleclang_15.0_cxx17_64_debug  appleclang_15.0_cxx17_64_debug/libtbb_debug.12.7.dylib  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd  imgui/libimgui.a  imgui/glfw/src/libglfw3.a  -framework Cocoa  -framework IOKit  -framework CoreFoundation  shewchuk_predicates/libshewchuk_predicates.a  _deps/indirect_predicates-build/libindirectPredicates.a
   OBJECT_DIR = CMakeFiles/booleans_demo.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -277,7 +277,7 @@ build cmake_object_order_depends_target_tbb: phony || arrangements/external/oneT
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/address_waiter.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/address_waiter.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/address_waiter.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -287,7 +287,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/address_waiter.cpp
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/allocator.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/allocator.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/allocator.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -297,7 +297,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/allocator.cpp.o: C
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/arena.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/arena.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/arena.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -307,7 +307,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/arena.cpp.o: CXX_C
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/arena_slot.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/arena_slot.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/arena_slot.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -317,7 +317,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/arena_slot.cpp.o: 
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/concurrent_bounded_queue.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/concurrent_bounded_queue.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/concurrent_bounded_queue.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -327,7 +327,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/concurrent_bounded
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/dynamic_link.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/dynamic_link.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/dynamic_link.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -337,7 +337,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/dynamic_link.cpp.o
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/exception.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/exception.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/exception.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -347,7 +347,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/exception.cpp.o: C
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/governor.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/governor.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/governor.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -357,7 +357,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/governor.cpp.o: CX
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/global_control.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/global_control.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/global_control.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -367,7 +367,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/global_control.cpp
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/itt_notify.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/itt_notify.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/itt_notify.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -377,7 +377,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/itt_notify.cpp.o: 
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/main.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/main.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/main.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -387,7 +387,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/main.cpp.o: CXX_CO
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/market.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/market.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/market.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -397,7 +397,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/market.cpp.o: CXX_
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/misc.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/misc.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/misc.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -407,7 +407,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/misc.cpp.o: CXX_CO
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/misc_ex.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/misc_ex.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/misc_ex.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -417,7 +417,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/misc_ex.cpp.o: CXX
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/observer_proxy.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/observer_proxy.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/observer_proxy.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -427,7 +427,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/observer_proxy.cpp
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/parallel_pipeline.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/parallel_pipeline.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/parallel_pipeline.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -437,7 +437,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/parallel_pipeline.
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/private_server.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/private_server.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/private_server.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -447,7 +447,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/private_server.cpp
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/profiling.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/profiling.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/profiling.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -457,7 +457,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/profiling.cpp.o: C
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rml_tbb.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/rml_tbb.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rml_tbb.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -467,7 +467,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rml_tbb.cpp.o: CXX
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rtm_mutex.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/rtm_mutex.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rtm_mutex.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -477,7 +477,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rtm_mutex.cpp.o: C
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rtm_rw_mutex.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/rtm_rw_mutex.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rtm_rw_mutex.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -487,7 +487,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rtm_rw_mutex.cpp.o
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/semaphore.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/semaphore.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/semaphore.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -497,7 +497,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/semaphore.cpp.o: C
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/small_object_pool.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/small_object_pool.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/small_object_pool.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -507,7 +507,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/small_object_pool.
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/task.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -517,7 +517,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task.cpp.o: CXX_CO
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task_dispatcher.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/task_dispatcher.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task_dispatcher.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -527,7 +527,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task_dispatcher.cp
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task_group_context.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/task_group_context.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task_group_context.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -537,7 +537,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task_group_context
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/version.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/version.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/version.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -547,7 +547,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/version.cpp.o: CXX
 build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/queuing_rw_mutex.cpp.o: CXX_COMPILER__tbb_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/queuing_rw_mutex.cpp || cmake_object_order_depends_target_tbb
   DEFINES = -DTBB_USE_DEBUG -D__TBB_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/queuing_rw_mutex.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir
@@ -563,7 +563,7 @@ build arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/queuing_rw_mutex.c
 # Link the shared library appleclang_15.0_cxx17_64_debug/libtbb_debug.12.7.dylib
 
 build appleclang_15.0_cxx17_64_debug/libtbb_debug.12.7.dylib: CXX_SHARED_LIBRARY_LINKER__tbb_Debug arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/address_waiter.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/allocator.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/arena.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/arena_slot.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/concurrent_bounded_queue.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/dynamic_link.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/exception.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/governor.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/global_control.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/itt_notify.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/main.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/market.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/misc.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/misc_ex.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/observer_proxy.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/parallel_pipeline.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/private_server.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/profiling.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rml_tbb.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rtm_mutex.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/rtm_rw_mutex.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/semaphore.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/small_object_pool.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task_dispatcher.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/task_group_context.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/version.cpp.o arrangements/external/oneTBB/src/tbb/CMakeFiles/tbb.dir/queuing_rw_mutex.cpp.o | /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/def/mac64-tbb.def
-  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   INSTALLNAME_DIR = @rpath/
   LANGUAGE_COMPILE_FLAGS = -g -flto=thin
   LINK_FLAGS = -Wl,-exported_symbols_list,/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/def/mac64-tbb.def  -compatibility_version 12.0.0 -current_version 12.7.0
@@ -689,7 +689,7 @@ build cmake_object_order_depends_target_tbbmalloc: phony || arrangements/externa
 build arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/backend.cpp.o: CXX_COMPILER__tbbmalloc_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/backend.cpp || cmake_object_order_depends_target_tbbmalloc
   DEFINES = -DTBB_USE_DEBUG -D__TBBMALLOC_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/backend.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -fno-rtti -fno-exceptions -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -fno-rtti -fno-exceptions -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir
@@ -699,7 +699,7 @@ build arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/backen
 build arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/backref.cpp.o: CXX_COMPILER__tbbmalloc_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/backref.cpp || cmake_object_order_depends_target_tbbmalloc
   DEFINES = -DTBB_USE_DEBUG -D__TBBMALLOC_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/backref.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -fno-rtti -fno-exceptions -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -fno-rtti -fno-exceptions -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir
@@ -709,7 +709,7 @@ build arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/backre
 build arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/frontend.cpp.o: CXX_COMPILER__tbbmalloc_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/frontend.cpp || cmake_object_order_depends_target_tbbmalloc
   DEFINES = -DTBB_USE_DEBUG -D__TBBMALLOC_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/frontend.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -fno-rtti -fno-exceptions -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -fno-rtti -fno-exceptions -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir
@@ -719,7 +719,7 @@ build arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/fronte
 build arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/large_objects.cpp.o: CXX_COMPILER__tbbmalloc_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/large_objects.cpp || cmake_object_order_depends_target_tbbmalloc
   DEFINES = -DTBB_USE_DEBUG -D__TBBMALLOC_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/large_objects.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -fno-rtti -fno-exceptions -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -fno-rtti -fno-exceptions -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir
@@ -729,7 +729,7 @@ build arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/large_
 build arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/tbbmalloc.cpp.o: CXX_COMPILER__tbbmalloc_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/tbbmalloc.cpp || cmake_object_order_depends_target_tbbmalloc
   DEFINES = -DTBB_USE_DEBUG -D__TBBMALLOC_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/tbbmalloc.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -fno-rtti -fno-exceptions -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -fno-rtti -fno-exceptions -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir
@@ -739,7 +739,7 @@ build arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/tbbmal
 build arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/__/tbb/itt_notify.cpp.o: CXX_COMPILER__tbbmalloc_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbb/itt_notify.cpp || cmake_object_order_depends_target_tbbmalloc
   DEFINES = -DTBB_USE_DEBUG -D__TBBMALLOC_BUILD
   DEP_FILE = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/__/tbb/itt_notify.cpp.o.d
-  FLAGS = -g -flto=thin -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -fno-rtti -fno-exceptions -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -flto=thin -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -fno-rtti -fno-exceptions -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/__/tbb
@@ -755,7 +755,7 @@ build arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/__/tbb
 # Link the shared library appleclang_15.0_cxx17_64_debug/libtbbmalloc_debug.2.7.dylib
 
 build appleclang_15.0_cxx17_64_debug/libtbbmalloc_debug.2.7.dylib: C_SHARED_LIBRARY_LINKER__tbbmalloc_Debug arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/backend.cpp.o arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/backref.cpp.o arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/frontend.cpp.o arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/large_objects.cpp.o arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/tbbmalloc.cpp.o arrangements/external/oneTBB/src/tbbmalloc/CMakeFiles/tbbmalloc.dir/__/tbb/itt_notify.cpp.o | /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/def/mac64-tbbmalloc.def
-  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   INSTALLNAME_DIR = @rpath/
   LANGUAGE_COMPILE_FLAGS = -g -flto=thin
   LINK_FLAGS = -Wl,-exported_symbols_list,/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/def/mac64-tbbmalloc.def  -compatibility_version 2.0.0 -current_version 2.7.0
@@ -881,7 +881,7 @@ build cmake_object_order_depends_target_tbbmalloc_proxy: phony || cmake_object_o
 build arrangements/external/oneTBB/src/tbbmalloc_proxy/CMakeFiles/tbbmalloc_proxy.dir/function_replacement.cpp.o: CXX_COMPILER__tbbmalloc_proxy_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc_proxy/function_replacement.cpp || cmake_object_order_depends_target_tbbmalloc_proxy
   DEFINES = -DTBB_USE_DEBUG -D__TBBMALLOCPROXY_BUILD -Dtbbmalloc_proxy_EXPORTS
   DEP_FILE = arrangements/external/oneTBB/src/tbbmalloc_proxy/CMakeFiles/tbbmalloc_proxy.dir/function_replacement.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc_proxy/../../include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbbmalloc_proxy/CMakeFiles/tbbmalloc_proxy.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbbmalloc_proxy/CMakeFiles/tbbmalloc_proxy.dir
@@ -891,7 +891,7 @@ build arrangements/external/oneTBB/src/tbbmalloc_proxy/CMakeFiles/tbbmalloc_prox
 build arrangements/external/oneTBB/src/tbbmalloc_proxy/CMakeFiles/tbbmalloc_proxy.dir/proxy.cpp.o: CXX_COMPILER__tbbmalloc_proxy_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc_proxy/proxy.cpp || cmake_object_order_depends_target_tbbmalloc_proxy
   DEFINES = -DTBB_USE_DEBUG -D__TBBMALLOCPROXY_BUILD -Dtbbmalloc_proxy_EXPORTS
   DEP_FILE = arrangements/external/oneTBB/src/tbbmalloc_proxy/CMakeFiles/tbbmalloc_proxy.dir/proxy.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Werror -Wno-parentheses -Wno-non-virtual-dtor -Wno-dangling-else -D_XOPEN_SOURCE -std=c++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc_proxy/../../include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/oneTBB/src/tbbmalloc/../../include
   OBJECT_DIR = arrangements/external/oneTBB/src/tbbmalloc_proxy/CMakeFiles/tbbmalloc_proxy.dir
   OBJECT_FILE_DIR = arrangements/external/oneTBB/src/tbbmalloc_proxy/CMakeFiles/tbbmalloc_proxy.dir
@@ -907,7 +907,7 @@ build arrangements/external/oneTBB/src/tbbmalloc_proxy/CMakeFiles/tbbmalloc_prox
 # Link the shared library appleclang_15.0_cxx17_64_debug/libtbbmalloc_proxy_debug.2.7.dylib
 
 build appleclang_15.0_cxx17_64_debug/libtbbmalloc_proxy_debug.2.7.dylib: CXX_SHARED_LIBRARY_LINKER__tbbmalloc_proxy_Debug arrangements/external/oneTBB/src/tbbmalloc_proxy/CMakeFiles/tbbmalloc_proxy.dir/function_replacement.cpp.o arrangements/external/oneTBB/src/tbbmalloc_proxy/CMakeFiles/tbbmalloc_proxy.dir/proxy.cpp.o | appleclang_15.0_cxx17_64_debug/libtbbmalloc_debug.2.7.dylib || appleclang_15.0_cxx17_64_debug/libtbbmalloc_debug.dylib appleclang_15.0_cxx17_64_debug/libtbbmalloc_debug.dylib
-  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   INSTALLNAME_DIR = @rpath/
   LANGUAGE_COMPILE_FLAGS = -g
   LINK_FLAGS = -compatibility_version 2.0.0 -current_version 2.7.0
@@ -1127,7 +1127,7 @@ build cmake_object_order_depends_target_imgui: phony || cmake_object_order_depen
 
 build imgui/CMakeFiles/imgui.dir/imgui.cpp.o: CXX_COMPILER__imgui_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/imgui.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = imgui/CMakeFiles/imgui.dir/imgui.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include
   OBJECT_DIR = imgui/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = imgui/CMakeFiles/imgui.dir
@@ -1136,7 +1136,7 @@ build imgui/CMakeFiles/imgui.dir/imgui.cpp.o: CXX_COMPILER__imgui_Debug /Users/e
 
 build imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.o: CXX_COMPILER__imgui_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/imgui_demo.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include
   OBJECT_DIR = imgui/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = imgui/CMakeFiles/imgui.dir
@@ -1145,7 +1145,7 @@ build imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.o: CXX_COMPILER__imgui_Debug /Us
 
 build imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.o: CXX_COMPILER__imgui_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/imgui_draw.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include
   OBJECT_DIR = imgui/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = imgui/CMakeFiles/imgui.dir
@@ -1154,7 +1154,7 @@ build imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.o: CXX_COMPILER__imgui_Debug /Us
 
 build imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.o: CXX_COMPILER__imgui_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/imgui_tables.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include
   OBJECT_DIR = imgui/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = imgui/CMakeFiles/imgui.dir
@@ -1163,7 +1163,7 @@ build imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.o: CXX_COMPILER__imgui_Debug /
 
 build imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.o: CXX_COMPILER__imgui_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/imgui_widgets.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include
   OBJECT_DIR = imgui/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = imgui/CMakeFiles/imgui.dir
@@ -1172,7 +1172,7 @@ build imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.o: CXX_COMPILER__imgui_Debug 
 
 build imgui/CMakeFiles/imgui.dir/imgui_impl_opengl2.cpp.o: CXX_COMPILER__imgui_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/imgui_impl_opengl2.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = imgui/CMakeFiles/imgui.dir/imgui_impl_opengl2.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include
   OBJECT_DIR = imgui/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = imgui/CMakeFiles/imgui.dir
@@ -1181,7 +1181,7 @@ build imgui/CMakeFiles/imgui.dir/imgui_impl_opengl2.cpp.o: CXX_COMPILER__imgui_D
 
 build imgui/CMakeFiles/imgui.dir/imgui_impl_glfw.cpp.o: CXX_COMPILER__imgui_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/imgui_impl_glfw.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = imgui/CMakeFiles/imgui.dir/imgui_impl_glfw.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include
   OBJECT_DIR = imgui/CMakeFiles/imgui.dir
   OBJECT_FILE_DIR = imgui/CMakeFiles/imgui.dir
@@ -1197,7 +1197,7 @@ build imgui/CMakeFiles/imgui.dir/imgui_impl_glfw.cpp.o: CXX_COMPILER__imgui_Debu
 # Link the static library imgui/libimgui.a
 
 build imgui/libimgui.a: CXX_STATIC_LIBRARY_LINKER__imgui_Debug imgui/CMakeFiles/imgui.dir/imgui.cpp.o imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.o imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.o imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.o imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.o imgui/CMakeFiles/imgui.dir/imgui_impl_opengl2.cpp.o imgui/CMakeFiles/imgui.dir/imgui_impl_glfw.cpp.o || imgui/glfw/src/libglfw3.a
-  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = imgui/CMakeFiles/imgui.dir
   POST_BUILD = :
@@ -1406,7 +1406,7 @@ build cmake_object_order_depends_target_glfw: phony || imgui/glfw/src/CMakeFiles
 build imgui/glfw/src/CMakeFiles/glfw.dir/context.c.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/context.c || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/context.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1416,7 +1416,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/context.c.o: C_COMPILER__glfw_Debug /Us
 build imgui/glfw/src/CMakeFiles/glfw.dir/init.c.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/init.c || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/init.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1426,7 +1426,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/init.c.o: C_COMPILER__glfw_Debug /Users
 build imgui/glfw/src/CMakeFiles/glfw.dir/input.c.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/input.c || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/input.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1436,7 +1436,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/input.c.o: C_COMPILER__glfw_Debug /User
 build imgui/glfw/src/CMakeFiles/glfw.dir/monitor.c.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/monitor.c || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/monitor.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1446,7 +1446,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/monitor.c.o: C_COMPILER__glfw_Debug /Us
 build imgui/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/vulkan.c || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1456,7 +1456,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o: C_COMPILER__glfw_Debug /Use
 build imgui/glfw/src/CMakeFiles/glfw.dir/window.c.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/window.c || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/window.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1466,7 +1466,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/window.c.o: C_COMPILER__glfw_Debug /Use
 build imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/cocoa_init.m || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1476,7 +1476,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o: C_COMPILER__glfw_Debug 
 build imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/cocoa_joystick.m || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1486,7 +1486,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o: C_COMPILER__glfw_De
 build imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/cocoa_monitor.m || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1496,7 +1496,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: C_COMPILER__glfw_Deb
 build imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/cocoa_window.m || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1506,7 +1506,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o: C_COMPILER__glfw_Debu
 build imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/cocoa_time.c || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1516,7 +1516,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o: C_COMPILER__glfw_Debug 
 build imgui/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/posix_thread.c || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1526,7 +1526,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o: C_COMPILER__glfw_Debu
 build imgui/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/nsgl_context.m || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1536,7 +1536,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o: C_COMPILER__glfw_Debu
 build imgui/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/egl_context.c || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1546,7 +1546,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o: C_COMPILER__glfw_Debug
 build imgui/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o: C_COMPILER__glfw_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src/osmesa_context.c || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_USE_CONFIG_H
   DEP_FILE = imgui/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC -fcolor-diagnostics -Wall -std=gnu99
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/include -I/Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/imgui/glfw/src -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/imgui/glfw/src
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   OBJECT_FILE_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
@@ -1562,7 +1562,7 @@ build imgui/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o: C_COMPILER__glfw_De
 # Link the static library imgui/glfw/src/libglfw3.a
 
 build imgui/glfw/src/libglfw3.a: C_STATIC_LIBRARY_LINKER__glfw_Debug imgui/glfw/src/CMakeFiles/glfw.dir/context.c.o imgui/glfw/src/CMakeFiles/glfw.dir/init.c.o imgui/glfw/src/CMakeFiles/glfw.dir/input.c.o imgui/glfw/src/CMakeFiles/glfw.dir/monitor.c.o imgui/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o imgui/glfw/src/CMakeFiles/glfw.dir/window.c.o imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o imgui/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o imgui/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o imgui/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o imgui/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o imgui/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o
-  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = imgui/glfw/src/CMakeFiles/glfw.dir
   POST_BUILD = :
@@ -1676,7 +1676,7 @@ build cmake_object_order_depends_target_shewchuk_predicates: phony || shewchuk_p
 
 build shewchuk_predicates/CMakeFiles/shewchuk_predicates.dir/shewchuk.c.o: C_COMPILER__shewchuk_predicates_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/arrangements/external/Cinolib/external/shewchuk_predicates/shewchuk.c || cmake_object_order_depends_target_shewchuk_predicates
   DEP_FILE = shewchuk_predicates/CMakeFiles/shewchuk_predicates.dir/shewchuk.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   OBJECT_DIR = shewchuk_predicates/CMakeFiles/shewchuk_predicates.dir
   OBJECT_FILE_DIR = shewchuk_predicates/CMakeFiles/shewchuk_predicates.dir
   TARGET_COMPILE_PDB = shewchuk_predicates/CMakeFiles/shewchuk_predicates.dir/shewchuk_predicates.pdb
@@ -1691,7 +1691,7 @@ build shewchuk_predicates/CMakeFiles/shewchuk_predicates.dir/shewchuk.c.o: C_COM
 # Link the static library shewchuk_predicates/libshewchuk_predicates.a
 
 build shewchuk_predicates/libshewchuk_predicates.a: C_STATIC_LIBRARY_LINKER__shewchuk_predicates_Debug shewchuk_predicates/CMakeFiles/shewchuk_predicates.dir/shewchuk.c.o
-  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = shewchuk_predicates/CMakeFiles/shewchuk_predicates.dir
   POST_BUILD = :
@@ -1805,7 +1805,7 @@ build cmake_object_order_depends_target_indirectPredicates: phony || _deps/indir
 
 build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/implicit_point.cpp.o: CXX_COMPILER__indirectPredicates_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/implicit_point.cpp || cmake_object_order_depends_target_indirectPredicates
   DEP_FILE = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/implicit_point.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/. -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates
   OBJECT_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir
   OBJECT_FILE_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir
@@ -1814,7 +1814,7 @@ build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/implicit
 
 build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/numerics.cpp.o: CXX_COMPILER__indirectPredicates_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/numerics.cpp || cmake_object_order_depends_target_indirectPredicates
   DEP_FILE = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/numerics.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/. -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates
   OBJECT_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir
   OBJECT_FILE_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir
@@ -1823,7 +1823,7 @@ build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/numerics
 
 build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/predicates/indirect_predicates.cpp.o: CXX_COMPILER__indirectPredicates_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates/indirect_predicates.cpp || cmake_object_order_depends_target_indirectPredicates
   DEP_FILE = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/predicates/indirect_predicates.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/. -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates
   OBJECT_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir
   OBJECT_FILE_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/predicates
@@ -1832,7 +1832,7 @@ build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/predicat
 
 build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/predicates/hand_optimized_predicates.cpp.o: CXX_COMPILER__indirectPredicates_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates/hand_optimized_predicates.cpp || cmake_object_order_depends_target_indirectPredicates
   DEP_FILE = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/predicates/hand_optimized_predicates.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/. -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates
   OBJECT_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir
   OBJECT_FILE_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/predicates
@@ -1848,7 +1848,7 @@ build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/predicat
 # Link the static library _deps/indirect_predicates-build/libindirectPredicates.a
 
 build _deps/indirect_predicates-build/libindirectPredicates.a: CXX_STATIC_LIBRARY_LINKER__indirectPredicates_Debug _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/implicit_point.cpp.o _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/numerics.cpp.o _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/predicates/indirect_predicates.cpp.o _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir/predicates/hand_optimized_predicates.cpp.o
-  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates.dir
   POST_BUILD = :
@@ -1868,7 +1868,7 @@ build cmake_object_order_depends_target_indirectPredicates_test: phony || _deps/
 
 build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/implicit_point.cpp.o: CXX_COMPILER__indirectPredicates_test_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/implicit_point.cpp || cmake_object_order_depends_target_indirectPredicates_test
   DEP_FILE = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/implicit_point.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/. -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates
   OBJECT_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir
   OBJECT_FILE_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir
@@ -1877,7 +1877,7 @@ build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/imp
 
 build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/numerics.cpp.o: CXX_COMPILER__indirectPredicates_test_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/numerics.cpp || cmake_object_order_depends_target_indirectPredicates_test
   DEP_FILE = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/numerics.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/. -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates
   OBJECT_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir
   OBJECT_FILE_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir
@@ -1886,7 +1886,7 @@ build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/num
 
 build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/predicates/indirect_predicates.cpp.o: CXX_COMPILER__indirectPredicates_test_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates/indirect_predicates.cpp || cmake_object_order_depends_target_indirectPredicates_test
   DEP_FILE = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/predicates/indirect_predicates.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/. -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates
   OBJECT_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir
   OBJECT_FILE_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/predicates
@@ -1895,7 +1895,7 @@ build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/pre
 
 build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/predicates/hand_optimized_predicates.cpp.o: CXX_COMPILER__indirectPredicates_test_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates/hand_optimized_predicates.cpp || cmake_object_order_depends_target_indirectPredicates_test
   DEP_FILE = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/predicates/hand_optimized_predicates.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/. -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates
   OBJECT_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir
   OBJECT_FILE_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/predicates
@@ -1904,7 +1904,7 @@ build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/pre
 
 build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/test.cpp.o: CXX_COMPILER__indirectPredicates_test_Debug /Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/test.cpp || cmake_object_order_depends_target_indirectPredicates_test
   DEP_FILE = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/test.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics -std=gnu++17
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics -std=gnu++17
   INCLUDES = -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/. -I/Users/elisa/Desktop/Tirocinio/booleans_demo/cmake-build-debug/_deps/indirect_predicates-src/predicates
   OBJECT_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir
   OBJECT_FILE_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir
@@ -1920,7 +1920,7 @@ build _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/tes
 # Link the executable _deps/indirect_predicates-build/indirectPredicates_test
 
 build _deps/indirect_predicates-build/indirectPredicates_test: CXX_EXECUTABLE_LINKER__indirectPredicates_test_Debug _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/implicit_point.cpp.o _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/numerics.cpp.o _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/predicates/indirect_predicates.cpp.o _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/predicates/hand_optimized_predicates.cpp.o _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir/test.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = _deps/indirect_predicates-build/CMakeFiles/indirectPredicates_test.dir
   POST_BUILD = :
   PRE_LINK = :
